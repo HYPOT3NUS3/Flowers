@@ -9,7 +9,7 @@ export type StudioEvent = {
   date: string;
   startTime: string;
   endTime: string;
-  location: string;
+  location: LocalizedText;
   price: number;
   seatsTotal: number;
   seatsAvailable: number;
@@ -30,7 +30,7 @@ export const events: StudioEvent[] = [
     date: "2026-08-08",
     startTime: "11:00",
     endTime: "13:30",
-    location: "Como centro",
+    location: { ru: "Центр Комо", en: "Como centre", it: "Como centro" },
     price: 145,
     seatsTotal: 12,
     seatsAvailable: 6,
@@ -47,7 +47,7 @@ export const events: StudioEvent[] = [
     date: "2026-09-12",
     startTime: "17:30",
     endTime: "20:00",
-    location: "Cernobbio",
+    location: { ru: "Черноббио", en: "Cernobbio", it: "Cernobbio" },
     price: 180,
     seatsTotal: 10,
     seatsAvailable: 4,
@@ -64,7 +64,7 @@ export const events: StudioEvent[] = [
     date: "2026-10-04",
     startTime: "10:30",
     endTime: "13:00",
-    location: "Lake Como studio",
+    location: { ru: "Студия на озере Комо", en: "Lake Como studio", it: "Studio sul Lago di Como" },
     price: 160,
     seatsTotal: 14,
     seatsAvailable: 9,
@@ -81,7 +81,7 @@ export const events: StudioEvent[] = [
     date: "2026-04-18",
     startTime: "11:00",
     endTime: "13:00",
-    location: "Como",
+    location: { ru: "Комо", en: "Como", it: "Como" },
     price: 120,
     seatsTotal: 12,
     seatsAvailable: 0,
@@ -98,7 +98,7 @@ export const events: StudioEvent[] = [
     date: "2026-05-23",
     startTime: "16:00",
     endTime: "18:00",
-    location: "Blevio",
+    location: { ru: "Блевио", en: "Blevio", it: "Blevio" },
     price: 150,
     seatsTotal: 10,
     seatsAvailable: 0,
@@ -115,7 +115,7 @@ export const events: StudioEvent[] = [
     date: "2026-06-15",
     startTime: "18:00",
     endTime: "19:30",
-    location: "Bellagio",
+    location: { ru: "Белладжо", en: "Bellagio", it: "Bellagio" },
     price: 95,
     seatsTotal: 8,
     seatsAvailable: 0,

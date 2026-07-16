@@ -12,7 +12,7 @@ export function ProductCard({ product, locale }: { product: Product; locale: Loc
   const addItem = useCart((state) => state.addItem);
   const title = text(product.title, locale);
   const isBespoke = product.exactPrice >= 500;
-  const addLabel = locale === "ru" ? "Добавить" : locale === "it" ? "Aggiungi" : "Add";
+  const addLabel = locale === "ru" ? "В корзину" : locale === "it" ? "Aggiungi al carrello" : "Add to cart";
   const bespokeLabel = locale === "ru" ? "Индивидуально" : locale === "it" ? "Su misura" : "Bespoke";
 
   return (

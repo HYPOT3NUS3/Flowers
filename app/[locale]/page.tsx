@@ -90,7 +90,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
       <section className="bespoke-band section-pad">
         <div className="container-shell grid gap-10 md:grid-cols-[0.78fr_1.22fr] md:items-start">
           <div className="md:pt-2">
-            <p className="label text-toile">Bespoke</p>
+            <p className="label text-toile">{locale === "ru" ? "Индивидуально" : locale === "it" ? "Su misura" : "Bespoke"}</p>
             <h2 className="serif mt-4 text-5xl leading-none md:text-7xl">{t("bespokeTitle")}</h2>
           </div>
           <EnquiryForm locale={locale} />
@@ -108,14 +108,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
           </Link>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {events.length ? events.map((event) => <EventCard key={event.id} event={event} locale={locale} />) : <p>No upcoming events.</p>}
+          {events.length ? events.map((event) => <EventCard key={event.id} event={event} locale={locale} />) : (
+            <p>{locale === "ru" ? "Ближайших мероприятий пока нет." : locale === "it" ? "Non ci sono eventi in programma." : "No upcoming events."}</p>
+          )}
         </div>
       </section>
 
       <section className="bg-ink text-porcelain">
         <div className="container-shell grid min-h-[620px] gap-8 py-16 md:grid-cols-[1.1fr_0.9fr] md:items-center">
           <div>
-            <p className="label text-powder">Lake Como</p>
+            <p className="label text-powder">{locale === "ru" ? "Озеро Комо" : locale === "it" ? "Lago di Como" : "Lake Como"}</p>
             <h2 className="serif mt-4 text-6xl leading-none md:text-8xl">{t("weddingTitle")}</h2>
             <p className="mt-6 max-w-xl leading-8 text-powder">{t("weddingText")}</p>
             <Link href={`/${locale}/weddings`} className="button-secondary button-on-dark mt-8">

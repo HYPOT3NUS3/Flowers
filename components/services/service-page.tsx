@@ -35,7 +35,7 @@ export function ServicePage({
       </section>
       <section className="bg-porcelain py-14">
         <div className="container-shell">
-          <p className="label text-center text-toile">Studio</p>
+          <p className="label text-center text-toile">{locale === "ru" ? "Студия" : locale === "it" ? "Studio" : "Studio"}</p>
           <div className="mt-8 grid gap-4 md:grid-cols-4">
             {services.map((service) => (
               <Link key={service.slug} href={`/${locale}${service.href}`} className="surface-panel lift-card rounded-[1.25rem] p-6 text-center">

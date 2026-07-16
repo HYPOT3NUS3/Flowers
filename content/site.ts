@@ -13,9 +13,18 @@ export const siteSettings = {
   whatsappNumber: "393518093005",
   whatsapp: "https://wa.me/393518093005",
   email: "victoriat@mail.ru",
-  instagram: "@muza_lakecomo",
-  address: "Lake Como, Italy",
-  openingHours: "Mon-Sat 10:00-19:00",
+  instagram: "@flowersboutique.it",
+  instagramUrl: "https://www.instagram.com/flowersboutique.it?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+  address: {
+    ru: "Озеро Комо, Италия",
+    en: "Lake Como, Italy",
+    it: "Lago di Como, Italia"
+  } satisfies LocalizedText,
+  openingHours: {
+    ru: "Пн-Сб 10:00-19:00",
+    en: "Mon-Sat 10:00-19:00",
+    it: "Lun-Sab 10:00-19:00"
+  } satisfies LocalizedText,
   revolutInstructions: {
     ru: "Данные Revolut/IBAN добавляются администратором. Не используйте этот демо-текст для реальных оплат.",
     en: "Revolut/IBAN details are configured by the administrator. Do not use this demo copy for real payments.",

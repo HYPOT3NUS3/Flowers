@@ -1,6 +1,7 @@
 import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { siteSettings } from "@/content/site";
 import { Locale } from "@/lib/localization/config";
+import { text } from "@/lib/localization/strings";
 
 export default async function ContactPage({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
@@ -12,7 +13,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         <div className="mt-8 grid gap-3 text-graphite">
           <a href={siteSettings.whatsapp}>WhatsApp {siteSettings.telephone}</a>
           <a href={`mailto:${siteSettings.email}`}>{siteSettings.email}</a>
-          <span>{siteSettings.address}</span>
+          <span>{text(siteSettings.address, locale)}</span>
         </div>
       </div>
       <EnquiryForm locale={locale} />

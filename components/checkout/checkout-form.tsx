@@ -33,14 +33,29 @@ export function CheckoutForm({ locale }: { locale: Locale }) {
     }
   });
   const total = useMemo(() => subtotal + (delivery?.deliveryFee || 0), [delivery, subtotal]);
-  const errorFor = (name: keyof CheckoutInput) => manualErrors[name];
+  const validationCopy: Partial<Record<keyof CheckoutInput, string>> = {
+    customerName: locale === "ru" ? "Введите имя покупателя." : locale === "it" ? "Inserisci il nome del cliente." : "Enter the customer name.",
+    customerEmail: locale === "ru" ? "Введите корректный email покупателя." : locale === "it" ? "Inserisci un'email cliente valida." : "Enter a valid customer email.",
+    customerPhone: locale === "ru" ? "Введите телефон покупателя." : locale === "it" ? "Inserisci il telefono del cliente." : "Enter the customer telephone.",
+    recipientName: locale === "ru" ? "Введите имя получателя." : locale === "it" ? "Inserisci il nome del destinatario." : "Enter the recipient name.",
+    recipientPhone: locale === "ru" ? "Введите телефон получателя." : locale === "it" ? "Inserisci il telefono del destinatario." : "Enter the recipient telephone.",
+    street: locale === "ru" ? "Введите улицу и номер дома." : locale === "it" ? "Inserisci via e numero civico." : "Enter the street address.",
+    town: locale === "ru" ? "Введите город." : locale === "it" ? "Inserisci la località." : "Enter the town.",
+    postalCode: locale === "ru" ? "Введите индекс." : locale === "it" ? "Inserisci il CAP." : "Enter the postal code.",
+    deliveryDate: locale === "ru" ? "Выберите дату доставки." : locale === "it" ? "Scegli una data di consegna." : "Choose a delivery date.",
+    deliveryTimeSlot: locale === "ru" ? "Выберите время доставки." : locale === "it" ? "Scegli una fascia oraria." : "Choose a delivery time slot.",
+    terms: locale === "ru" ? "Подтвердите принятие условий." : locale === "it" ? "Conferma l'accettazione dei termini." : "Please accept the terms.",
+    privacy: locale === "ru" ? "Подтвердите ознакомление с политикой конфиденциальности." : locale === "it" ? "Conferma di aver letto l'informativa privacy." : "Please acknowledge the privacy notice.",
+    seasonalDisclaimer: locale === "ru" ? "Подтвердите сезонный дисклеймер." : locale === "it" ? "Conferma la nota stagionale." : "Please acknowledge the seasonal disclaimer."
+  };
+  const errorFor = (name: keyof CheckoutInput) => manualErrors[name] ? validationCopy[name] || manualErrors[name] : undefined;
 
   async function checkDelivery() {
     const { town, postalCode } = getValues();
     const response = await fetch("/api/delivery", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ town, postalCode })
+      body: JSON.stringify({ town, postalCode, locale })
     });
     setDelivery(await response.json());
   }
@@ -97,7 +112,7 @@ export function CheckoutForm({ locale }: { locale: Locale }) {
   }
 
   const copy = {
-    empty: locale === "ru" ? "Добавьте композиции перед оформлением." : locale === "it" ? "Aggiungi composizioni prima del checkout." : "Add arrangements before checkout.",
+    empty: locale === "ru" ? "Добавьте композиции перед оформлением." : locale === "it" ? "Aggiungi composizioni prima della conferma ordine." : "Add arrangements before checkout.",
     customer: locale === "ru" ? "Покупатель" : locale === "it" ? "Cliente" : "Customer",
     recipient: locale === "ru" ? "Получатель" : locale === "it" ? "Destinatario" : "Recipient",
     delivery: locale === "ru" ? "Доставка" : locale === "it" ? "Consegna" : "Delivery",
@@ -120,11 +135,11 @@ export function CheckoutForm({ locale }: { locale: Locale }) {
     concierge: locale === "ru" ? "Контакт консьержа или виллы" : locale === "it" ? "Contatto concierge o villa" : "Hotel concierge or villa contact",
     calculate: locale === "ru" ? "Рассчитать доставку" : locale === "it" ? "Calcola consegna" : "Calculate delivery",
     card: locale === "ru" ? "Текст для открытки" : locale === "it" ? "Messaggio per il biglietto" : "Complimentary card message",
-    blankCard: locale === "ru" ? "Оставить открытку пустой" : locale === "it" ? "Lasciare il biglietto vuoto" : "Leave the card blank",
+    blankCard: locale === "ru" ? "Оставить открытку пустой" : locale === "it" ? "Lascia il biglietto vuoto" : "Leave the card blank",
     anonymousSender: locale === "ru" ? "Анонимный отправитель" : locale === "it" ? "Mittente anonimo" : "Anonymous sender",
     terms: locale === "ru" ? "Я принимаю условия." : locale === "it" ? "Accetto i termini." : "I accept the terms.",
     privacy: locale === "ru" ? "Я ознакомлен(а) с политикой конфиденциальности." : locale === "it" ? "Ho letto l'informativa privacy." : "I acknowledge the privacy notice.",
-    seasonal: locale === "ru" ? "Я понимаю, что сезонные цветы могут отличаться на 1-5%." : locale === "it" ? "Confermo il disclaimer stagionale 95-99%." : "I acknowledge the 95-99% seasonal floral disclaimer.",
+    seasonal: locale === "ru" ? "Я понимаю, что сезонные цветы могут отличаться на 1-5%." : locale === "it" ? "Confermo che i fiori stagionali possono variare dell'1-5%." : "I acknowledge the 95-99% seasonal floral disclaimer.",
     order: locale === "ru" ? "Заказ" : locale === "it" ? "Ordine" : "Order",
     subtotal: locale === "ru" ? "Сумма" : locale === "it" ? "Subtotale" : "Subtotal",
     total: locale === "ru" ? "Итого" : locale === "it" ? "Totale" : "Total",

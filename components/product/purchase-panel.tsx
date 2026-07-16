@@ -62,10 +62,10 @@ export function PurchasePanel({ product, locale }: { product: Product; locale: L
       >
         {isBespoke
           ? locale === "ru" ? "Запросить индивидуально" : locale === "it" ? "Richiedi su misura" : "Request bespoke"
-          : locale === "ru" ? "Добавить в корзину" : locale === "it" ? "Aggiungi alla borsa" : "Add to bag"}
+          : locale === "ru" ? "Добавить в корзину" : locale === "it" ? "Aggiungi al carrello" : "Add to cart"}
       </button>
       <p className="mt-4 text-sm leading-6 text-graphite">
-        {locale === "ru" ? "Минимальное время подготовки:" : locale === "it" ? "Tempo minimo di preparazione:" : "Minimum lead time:"} {product.minimumLeadTimeHours}h
+        {locale === "ru" ? "Минимальное время подготовки:" : locale === "it" ? "Tempo minimo di preparazione:" : "Minimum lead time:"} {product.minimumLeadTimeHours} {locale === "ru" ? "ч" : locale === "it" ? "ore" : "h"}
       </p>
     </div>
   );

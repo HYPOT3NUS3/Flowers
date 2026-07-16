@@ -52,6 +52,16 @@ export function EnquiryForm({ locale, compact = false }: { locale: Locale; compa
     budget: locale === "ru" ? "Бюджет" : locale === "it" ? "Budget indicativo" : "Approximate budget",
     message: locale === "ru" ? "Сообщение" : locale === "it" ? "Messaggio" : "Message"
   };
+  const errorLabels: Partial<Record<keyof EnquiryValues, string>> = {
+    name: locale === "ru" ? "Введите имя." : locale === "it" ? "Inserisci il nome." : "Please enter your name.",
+    email: locale === "ru" ? "Введите корректный email." : locale === "it" ? "Inserisci un'email valida." : "Please enter a valid email address.",
+    phone: locale === "ru" ? "Введите телефон или WhatsApp." : locale === "it" ? "Inserisci telefono o WhatsApp." : "Please enter a telephone or WhatsApp number.",
+    occasion: locale === "ru" ? "Опишите повод." : locale === "it" ? "Descrivi l'occasione." : "Please describe the occasion.",
+    date: locale === "ru" ? "Выберите желаемую дату." : locale === "it" ? "Scegli una data desiderata." : "Please choose a desired date.",
+    budget: locale === "ru" ? "Укажите примерный бюджет." : locale === "it" ? "Indica un budget orientativo." : "Please choose an approximate budget.",
+    message: locale === "ru" ? "Добавьте несколько деталей." : locale === "it" ? "Aggiungi qualche dettaglio." : "Please add a few details."
+  };
+  const errorFor = (field: keyof EnquiryValues) => errors[field] ? errorLabels[field] : null;
 
   const fieldClass = "w-full field-shell px-3 py-3 text-sm";
 
@@ -61,13 +71,13 @@ export function EnquiryForm({ locale, compact = false }: { locale: Locale; compa
         <label key={field} className="grid gap-2 text-sm">
           {labels[field]}
           <input className={fieldClass} type={field === "date" ? "date" : "text"} {...register(field)} />
-          {errors[field] ? <span className="text-xs text-red-700">{errors[field]?.message}</span> : null}
+          {errorFor(field) ? <span className="text-xs text-red-700">{errorFor(field)}</span> : null}
         </label>
       ))}
       <label className={`grid gap-2 text-sm ${compact ? "" : "md:col-span-2"}`}>
         {labels.message}
         <textarea className={`${fieldClass} min-h-28`} {...register("message")} />
-        {errors.message ? <span className="text-xs text-red-700">{errors.message.message}</span> : null}
+        {errorFor("message") ? <span className="text-xs text-red-700">{errorFor("message")}</span> : null}
       </label>
       <label className="grid gap-2 text-sm">
         {locale === "ru" ? "Язык связи" : locale === "it" ? "Lingua di contatto" : "Preferred contact language"}

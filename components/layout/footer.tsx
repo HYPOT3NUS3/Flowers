@@ -34,8 +34,8 @@ export function Footer({ locale }: { locale: Locale }) {
           <div className="mt-4 grid gap-3 text-sm text-graphite">
             <a href={`mailto:${siteSettings.email}`}>{siteSettings.email}</a>
             <a href={siteSettings.whatsapp}>WhatsApp {siteSettings.telephone}</a>
-            <span>{siteSettings.address}</span>
-            <span>{siteSettings.openingHours}</span>
+            <span>{text(siteSettings.address, locale)}</span>
+            <span>{text(siteSettings.openingHours, locale)}</span>
           </div>
         </div>
         <div>
@@ -43,7 +43,7 @@ export function Footer({ locale }: { locale: Locale }) {
           <nav className="mt-4 grid gap-3 text-sm">
             <Link href={`/${locale}/terms`}>{locale === "ru" ? "Условия" : locale === "it" ? "Termini" : "Terms"}</Link>
             <Link href={`/${locale}/privacy`}>{locale === "ru" ? "Конфиденциальность" : locale === "it" ? "Privacy" : "Privacy"}</Link>
-            <Link href={`/${locale}/cookies`}>Cookies</Link>
+            <Link href={`/${locale}/cookies`}>{locale === "ru" ? "Cookie" : locale === "it" ? "Cookie" : "Cookies"}</Link>
             <div className="flex gap-3 pt-3">
               {locales.map((item) => (
                 <Link key={item} href={`/${item}`} className={item === locale ? "text-ink" : "text-graphite"}>
@@ -53,7 +53,7 @@ export function Footer({ locale }: { locale: Locale }) {
             </div>
           </nav>
           <form className="mt-6">
-            <label className="label" htmlFor="newsletter">Newsletter</label>
+            <label className="label" htmlFor="newsletter">{locale === "ru" ? "Рассылка" : locale === "it" ? "Newsletter" : "Newsletter"}</label>
             <div className="field-shell mt-3 flex">
               <input id="newsletter" type="email" placeholder="email@example.com" className="min-w-0 flex-1 bg-transparent px-3 py-3 text-sm" />
               <button className="border-l border-[var(--border)] px-4 text-xs uppercase tracking-[0.12em]">OK</button>
