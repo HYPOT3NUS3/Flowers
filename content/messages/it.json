@@ -1,0 +1,81 @@
+{
+  "common": {
+    "shop": "Scopri le collezioni",
+    "bespoke": "Ordine su misura",
+    "addToBag": "Aggiungi alla borsa",
+    "requestBespoke": "Richiedi su misura",
+    "continueShopping": "Continua lo shopping",
+    "checkout": "Vai al checkout",
+    "subtotal": "Subtotale",
+    "emptyCart": "La borsa è vuota.",
+    "search": "Cerca",
+    "sort": "Ordina",
+    "filter": "Filtro",
+    "all": "Tutti",
+    "loading": "Caricamento",
+    "book": "Prenota un posto",
+    "readMore": "Scopri di più",
+    "send": "Invia",
+    "success": "Grazie. Abbiamo ricevuto la richiesta.",
+    "error": "Non è stato possibile inviare il modulo. Riprova."
+  },
+  "home": {
+    "signature": "THE SIGNATURE COLLECTION",
+    "signatureText": "Una selezione curata di composizioni espressive con consegna a Como e lungo il lago.",
+    "budgetTitle": "Scegli la dimensione della composizione",
+    "philosophyLabel": "Filosofia dello studio",
+    "missionLabel": "Missione",
+    "servicesLabel": "Servizi",
+    "bespokeTitle": "Una composizione creata esclusivamente per voi.",
+    "eventsTitle": "Prossimi eventi",
+    "weddingTitle": "Matrimoni sul Lago di Como",
+    "weddingText": "Cerimonie intime, ville, cene sull'acqua e grandi celebrazioni con una regia floreale precisa.",
+    "weddingCta": "Organizza il tuo matrimonio",
+    "instagram": "Instagram dello studio",
+    "deliveryTitle": "Consegna a Como",
+    "deliveryText": "Como centro, paesi lungo il lago, ville e destinazioni su misura sono calcolati tramite zone di consegna modificabili."
+  },
+  "shop": {
+    "title": "Collezioni MUZA",
+    "intro": "Bouquet d'autore, composizioni da tavola e commissioni floreali su misura per Como e il lago.",
+    "count": "prodotti",
+    "empty": "Nessun prodotto corrisponde a questi filtri.",
+    "category": "Categoria"
+  },
+  "product": {
+    "deliveryDate": "Data di consegna",
+    "timeSlot": "Fascia oraria",
+    "quantity": "Quantità",
+    "composition": "Composizione",
+    "care": "Cura",
+    "delivery": "Consegna",
+    "related": "Composizioni correlate",
+    "seasonal": "Nota stagionale"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "customer": "Cliente",
+    "recipient": "Destinatario",
+    "delivery": "Consegna",
+    "gift": "Biglietto",
+    "payment": "Pagamento",
+    "consent": "Consensi",
+    "submit": "Continua al pagamento",
+    "demoStripe": "Stripe non è configurato. Questa è una modalità demo sicura.",
+    "deliveryQuote": "Richiedi un preventivo di consegna"
+  },
+  "pages": {
+    "services": "Servizi dello studio",
+    "weddings": "Matrimoni",
+    "proposals": "Proposte di matrimonio",
+    "events": "Eventi e workshop",
+    "archive": "Eventi passati",
+    "workshops": "Workshop",
+    "about": "Chi siamo",
+    "delivery": "Consegna",
+    "contact": "Contatti",
+    "privacy": "Informativa privacy",
+    "cookies": "Cookie Policy",
+    "terms": "Termini"
+  }
+}

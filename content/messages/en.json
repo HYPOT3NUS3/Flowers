@@ -1,0 +1,81 @@
+{
+  "common": {
+    "shop": "View collections",
+    "bespoke": "Bespoke order",
+    "addToBag": "Add to bag",
+    "requestBespoke": "Request bespoke",
+    "continueShopping": "Continue shopping",
+    "checkout": "Proceed to checkout",
+    "subtotal": "Subtotal",
+    "emptyCart": "Your bag is empty.",
+    "search": "Search",
+    "sort": "Sort",
+    "filter": "Filter",
+    "all": "All",
+    "loading": "Loading",
+    "book": "Book a place",
+    "readMore": "Read more",
+    "send": "Send",
+    "success": "Thank you. We received your request.",
+    "error": "The form could not be sent. Please try again."
+  },
+  "home": {
+    "signature": "THE SIGNATURE COLLECTION",
+    "signatureText": "A curated collection of expressive arrangements for delivery across Como and the lake shore.",
+    "budgetTitle": "Choose the scale of your arrangement",
+    "philosophyLabel": "Studio philosophy",
+    "missionLabel": "Mission",
+    "servicesLabel": "Services",
+    "bespokeTitle": "An arrangement created entirely for you.",
+    "eventsTitle": "Upcoming events",
+    "weddingTitle": "Lake Como weddings",
+    "weddingText": "Intimate ceremonies, villas, dinners by the water and large celebrations with precise floral direction.",
+    "weddingCta": "Plan your wedding",
+    "instagram": "Studio Instagram",
+    "deliveryTitle": "Delivery across Como",
+    "deliveryText": "Como centre, lake shore towns, villas and custom destinations are calculated through editable delivery zones."
+  },
+  "shop": {
+    "title": "MUZA Collections",
+    "intro": "Signature bouquets, table arrangements and bespoke floral commissions for Como and the lake.",
+    "count": "products",
+    "empty": "No products match these filters.",
+    "category": "Category"
+  },
+  "product": {
+    "deliveryDate": "Delivery date",
+    "timeSlot": "Time slot",
+    "quantity": "Quantity",
+    "composition": "Composition",
+    "care": "Care",
+    "delivery": "Delivery",
+    "related": "Related arrangements",
+    "seasonal": "Seasonal disclaimer"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "customer": "Customer",
+    "recipient": "Recipient",
+    "delivery": "Delivery",
+    "gift": "Gift card",
+    "payment": "Payment",
+    "consent": "Consent",
+    "submit": "Continue to payment",
+    "demoStripe": "Stripe is not configured. This is safe demo mode.",
+    "deliveryQuote": "Request a delivery quote"
+  },
+  "pages": {
+    "services": "Studio services",
+    "weddings": "Weddings",
+    "proposals": "Marriage proposals",
+    "events": "Events and workshops",
+    "archive": "Past events",
+    "workshops": "Workshops",
+    "about": "About",
+    "delivery": "Delivery",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "terms": "Terms"
+  }
+}
