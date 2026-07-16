@@ -20,7 +20,7 @@
     "error": "Non è stato possibile inviare il modulo. Riprova."
   },
   "home": {
-    "signature": "THE SIGNATURE COLLECTION",
+    "signature": "Collezione signature",
     "signatureText": "Una selezione curata di composizioni espressive con consegna a Como e lungo il lago.",
     "budgetTitle": "Scegli la dimensione della composizione",
     "philosophyLabel": "Filosofia dello studio",
@@ -75,7 +75,7 @@
     "delivery": "Consegna",
     "contact": "Contatti",
     "privacy": "Informativa privacy",
-    "cookies": "Cookie Policy",
+    "cookies": "Informativa cookie",
     "terms": "Termini"
   }
 }

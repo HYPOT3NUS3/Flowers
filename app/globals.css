@@ -229,6 +229,50 @@ svg {
   border-color: var(--porcelain);
 }
 
+.locale-switcher {
+  display: none;
+}
+
+.locale-switcher-pill {
+  min-height: 32px;
+  min-width: 48px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(94, 94, 94, 0.82);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: background 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.locale-switcher-pill-active {
+  background: linear-gradient(135deg, var(--aqua), #eef6f8);
+  color: var(--ink);
+  box-shadow: 0 10px 24px rgba(22, 22, 22, 0.08);
+}
+
+.hero-locale-switch {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  border: 1px solid rgba(113, 141, 165, 0.26);
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.88);
+  padding: 0.18rem;
+  box-shadow: 0 14px 38px rgba(22, 22, 22, 0.07);
+  backdrop-filter: blur(18px);
+  transform: translateY(-0.85rem);
+}
+
+.hero-locale-switch .locale-switcher-pill {
+  min-height: 34px;
+  min-width: 54px;
+}
+
 .section-pad {
   padding-block: clamp(4rem, 8vw, 8rem);
 }
@@ -389,6 +433,20 @@ svg {
   backdrop-filter: blur(10px);
 }
 
+.budget-scroll {
+  scrollbar-width: none;
+  scroll-padding-inline: 12px;
+  scroll-snap-type: x proximity;
+}
+
+.budget-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.budget-scroll > * {
+  scroll-snap-align: start;
+}
+
 .glass-panel {
   border: 1px solid rgba(22, 22, 22, 0.12);
   background: rgba(255, 253, 249, 0.78);
@@ -434,6 +492,56 @@ svg {
 @media (max-width: 520px) {
   .container-shell {
     width: min(100% - 24px, 1480px);
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+
+  .button-primary,
+  .button-secondary {
+    min-height: 46px;
+    padding-inline: 1rem;
+    letter-spacing: 0.1em;
+  }
+
+  .locale-switcher {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    border: 1px solid rgba(113, 141, 165, 0.26);
+    border-radius: 999px;
+    background: rgba(255, 253, 249, 0.86);
+    padding: 0.18rem;
+    box-shadow: 0 12px 34px rgba(22, 22, 22, 0.07);
+    backdrop-filter: blur(18px);
+  }
+
+  .locale-switcher-pill {
+    min-height: 34px;
+    min-width: 54px;
+  }
+
+  .hero-copy {
+    padding-top: 0.35rem;
+  }
+
+  .hero-brand {
+    margin-bottom: 1.1rem;
+  }
+
+  .editorial-title {
+    font-size: clamp(2.35rem, 12vw, 3.45rem);
+  }
+
+  .botanical-paper .container-shell {
+    min-height: 72svh;
+    padding-top: 1.75rem;
+    padding-bottom: 3.6rem;
   }
 
   .product-grid {

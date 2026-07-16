@@ -5,6 +5,7 @@ import { ProductCard } from "@/components/shop/product-card";
 import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { EventCard } from "@/components/events/event-card";
 import { InstagramGrid } from "@/components/home/instagram-grid";
+import { LocaleSwitcher } from "@/components/layout/locale-switcher";
 import { ProductImage } from "@/components/ui/product-image";
 import { products } from "@/content/products/products";
 import { upcomingEvents } from "@/content/events/events";
@@ -22,8 +23,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
     <>
       <section className="botanical-paper border-b border-[var(--border)]">
         <div className="container-shell grid min-h-[78svh] items-center gap-10 py-14 md:grid-cols-[1.05fr_0.95fr]">
-          <div className="mx-auto max-w-3xl text-center md:-mt-36 md:text-left">
-            <div className="brand-mark mx-auto mb-4 md:mx-0">
+          <div className="hero-copy mx-auto max-w-3xl text-center md:-mt-36 md:text-left">
+            <LocaleSwitcher locale={locale} className="hero-locale-switch mx-auto mb-7" />
+            <div className="brand-mark hero-brand mx-auto mb-4 md:mx-0">
               <span className="brand-wordmark brand-wordmark-small">MUZA</span>
               <span className="brand-kicker">Flowers Boutique</span>
               <span className="brand-location">Lake Como</span>

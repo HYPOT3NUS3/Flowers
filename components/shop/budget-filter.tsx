@@ -33,7 +33,7 @@ export function BudgetFilter({ locale, title }: { locale: Locale; title: string 
             {locale === "ru" ? "Все" : locale === "it" ? "Tutto" : "All"}
           </button>
         </div>
-        <div className="mt-8 flex gap-3 overflow-x-auto pb-2 text-left">
+        <div className="budget-scroll mt-8 flex gap-3 overflow-x-auto pb-2 text-left">
           {budgetBands.map((band) => (
             <button
               key={band.id}
