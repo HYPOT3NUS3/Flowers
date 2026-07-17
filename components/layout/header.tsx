@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AtSign, ChevronRight, Mail, Menu, MessageCircle, Phone, Search, ShoppingBag, X } from "lucide-react";
+import { ChevronRight, Menu, Phone, Search, ShoppingBag, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { navItems, siteSettings } from "@/content/site";
 import { Locale, localeNames, locales } from "@/lib/localization/config";
 import { text } from "@/lib/localization/strings";
 import { useCart, useCartTotals } from "@/components/cart/cart-store";
+import { InstagramIcon } from "@/components/ui/instagram-icon";
 
 function switchLocale(pathname: string, nextLocale: Locale) {
   const parts = pathname.split("/");
@@ -29,10 +30,7 @@ export function Header({ locale }: { locale: Locale }) {
     home: locale === "ru" ? "MUZA, главная" : locale === "it" ? "MUZA, home" : "MUZA home",
     search: locale === "ru" ? "Поиск по каталогу" : locale === "it" ? "Cerca nel catalogo" : "Search catalogue",
     shoppingBag: locale === "ru" ? "Открыть корзину" : locale === "it" ? "Apri il carrello" : "Open cart",
-    contacts: locale === "ru" ? "Контакты" : locale === "it" ? "Contatti" : "Contacts",
-    whatsapp: locale === "ru" ? "WhatsApp" : locale === "it" ? "WhatsApp" : "WhatsApp",
-    phone: locale === "ru" ? "Телефон" : locale === "it" ? "Telefono" : "Phone",
-    email: locale === "ru" ? "Email" : locale === "it" ? "Email" : "Email"
+    contacts: locale === "ru" ? "Контакты" : locale === "it" ? "Contatti" : "Contacts"
   };
 
   return (
@@ -115,35 +113,15 @@ export function Header({ locale }: { locale: Locale }) {
               </Link>
             ))}
             <a href={siteSettings.instagramUrl} target="_blank" rel="noreferrer" className="mobile-menu-link mobile-menu-link-social">
-              <span className="mobile-menu-icon"><AtSign size={20} /></span>
+              <span className="mobile-menu-icon"><InstagramIcon size={20} /></span>
               <span className="mobile-menu-text">Instagram</span>
               <ChevronRight className="mobile-menu-arrow" size={19} />
             </a>
-            <section className="mobile-contact-panel" aria-label={labels.contacts}>
-              <p className="label text-toile">{labels.contacts}</p>
-              <div className="mt-4 grid gap-3">
-                <a href={siteSettings.instagramUrl} target="_blank" rel="noreferrer" className="mobile-contact-link">
-                  <AtSign size={18} aria-hidden="true" />
-                  <span>Instagram</span>
-                  <span className="mobile-contact-detail">{siteSettings.instagram}</span>
-                </a>
-                <a href={siteSettings.whatsapp} target="_blank" rel="noreferrer" className="mobile-contact-link">
-                  <MessageCircle size={18} aria-hidden="true" />
-                  <span>{labels.whatsapp}</span>
-                  <span className="mobile-contact-detail">{siteSettings.telephone}</span>
-                </a>
-                <a href={`tel:${siteSettings.telephone.replace(/\s/g, "")}`} className="mobile-contact-link">
-                  <Phone size={18} aria-hidden="true" />
-                  <span>{labels.phone}</span>
-                  <span className="mobile-contact-detail">{siteSettings.telephone}</span>
-                </a>
-                <a href={`mailto:${siteSettings.email}`} className="mobile-contact-link">
-                  <Mail size={18} aria-hidden="true" />
-                  <span>{labels.email}</span>
-                  <span className="mobile-contact-detail">{siteSettings.email}</span>
-                </a>
-              </div>
-            </section>
+            <Link href={`/${locale}/contact`} className="mobile-menu-link mobile-menu-link-social" onClick={() => setOpen(false)}>
+              <span className="mobile-menu-icon"><Phone size={20} /></span>
+              <span className="mobile-menu-text">{labels.contacts}</span>
+              <ChevronRight className="mobile-menu-arrow" size={19} />
+            </Link>
             <Link href={`/${locale}/contact?service=bespoke`} className="button-primary mt-5 w-full" onClick={() => setOpen(false)}>
               {locale === "ru" ? "Индивидуальный заказ" : locale === "it" ? "Ordine su misura" : "Bespoke order"}
             </Link>
