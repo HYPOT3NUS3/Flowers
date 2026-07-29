@@ -21,7 +21,7 @@
   },
   "home": {
     "signature": "Collezione signature",
-    "signatureText": "Una selezione curata di composizioni espressive con consegna a Como e lungo il lago.",
+    "signatureText": "Una collezione di bouquet d'autore e composizioni floreali.",
     "budgetTitle": "Scegli la dimensione della composizione",
     "philosophyLabel": "Filosofia dello studio",
     "missionLabel": "Missione",
@@ -36,8 +36,8 @@
     "deliveryText": "Como centro, paesi lungo il lago, ville e destinazioni su misura sono calcolati tramite zone di consegna modificabili."
   },
   "shop": {
-    "title": "Collezioni MUZA",
-    "intro": "Bouquet d'autore, composizioni da tavola e commissioni floreali su misura per Como e il lago.",
+    "title": "Collezioni",
+    "intro": "Bouquet d'autore, ceste, composizioni e ordini su misura per momenti speciali.",
     "count": "prodotti",
     "empty": "Nessun prodotto corrisponde a questi filtri.",
     "category": "Categoria"

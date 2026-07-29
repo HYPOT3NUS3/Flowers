@@ -34,7 +34,7 @@ export async function getInstagramFeed(): Promise<InstagramTile[]> {
         id: item.id,
         image: item.media_url!,
         href: item.permalink!,
-        alt: item.caption?.slice(0, 120) || "MUZA Instagram post"
+        alt: item.caption?.slice(0, 120) || "go love Instagram post"
       }));
 
     return tiles.length ? tiles : instagramFallback;

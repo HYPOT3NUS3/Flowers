@@ -12,6 +12,7 @@ import { upcomingEvents } from "@/content/events/events";
 import { homeCopy, services } from "@/content/site";
 import { Locale } from "@/lib/localization/config";
 import { text } from "@/lib/localization/strings";
+import { BrandLogo } from "@/components/layout/brand-logo";
 
 export default async function HomePage({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
@@ -26,9 +27,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
           <div className="hero-copy mx-auto max-w-3xl text-center md:-mt-36 md:text-left">
             <LocaleSwitcher locale={locale} className="hero-locale-switch mx-auto mb-7" />
             <div className="brand-mark hero-brand mx-auto mb-4 md:mx-0">
-              <span className="brand-wordmark brand-wordmark-small">MUZA</span>
-              <span className="brand-kicker">Flowers Boutique</span>
-              <span className="brand-location">Lake Como</span>
+              <BrandLogo className="brand-logo-hero" />
             </div>
             <h1 className="editorial-title">{text(homeCopy.heroTitle, locale)}</h1>
             <p className="mt-4 max-w-xl text-lg leading-8 text-graphite">{text(homeCopy.heroText, locale)}</p>
@@ -46,7 +45,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
       <section className="container-shell section-pad text-center">
         <p className="label text-toile">{t("signature")}</p>
         <h2 className="serif mx-auto mt-4 max-w-3xl text-5xl leading-none md:text-7xl">
-          {locale === "ru" ? "Цветы для озера, виллы и момента." : locale === "it" ? "Fiori per il lago, la villa, il momento." : "Flowers for the lake, the villa, the moment."}
+          {locale === "ru" ? "Искусство флористики для событий, которые остаются в сердце." : locale === "it" ? "L'arte floreale per momenti che restano nel cuore." : "The art of floristry for moments that stay in the heart."}
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-graphite">{t("signatureText")}</p>
         <div className="product-grid mt-12 text-left">
@@ -77,7 +76,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
 
       <section className="container-shell section-pad">
         <p className="label text-toile">{t("servicesLabel")}</p>
-        <div className="mt-8 grid gap-4 md:grid-cols-4">
+        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => (
             <Link key={service.slug} href={`/${locale}${service.href}`} className="surface-panel lift-card p-6">
               <h3 className="serif text-3xl leading-none">{text(service.title, locale)}</h3>

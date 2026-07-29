@@ -9,6 +9,7 @@ import { Locale, localeNames, locales } from "@/lib/localization/config";
 import { text } from "@/lib/localization/strings";
 import { useCart, useCartTotals } from "@/components/cart/cart-store";
 import { InstagramIcon } from "@/components/ui/instagram-icon";
+import { BrandLogo } from "@/components/layout/brand-logo";
 
 function switchLocale(pathname: string, nextLocale: Locale) {
   const parts = pathname.split("/");
@@ -27,7 +28,7 @@ export function Header({ locale }: { locale: Locale }) {
   const labels = {
     openMenu: locale === "ru" ? "Открыть меню" : locale === "it" ? "Apri menu" : "Open menu",
     closeMenu: locale === "ru" ? "Закрыть меню" : locale === "it" ? "Chiudi menu" : "Close menu",
-    home: locale === "ru" ? "MUZA, главная" : locale === "it" ? "MUZA, home" : "MUZA home",
+    home: locale === "ru" ? "go love, главная" : locale === "it" ? "go love, home" : "go love home",
     search: locale === "ru" ? "Поиск по каталогу" : locale === "it" ? "Cerca nel catalogo" : "Search catalogue",
     shoppingBag: locale === "ru" ? "Открыть корзину" : locale === "it" ? "Apri il carrello" : "Open cart",
     contacts: locale === "ru" ? "Контакты" : locale === "it" ? "Contatti" : "Contacts"
@@ -45,24 +46,22 @@ export function Header({ locale }: { locale: Locale }) {
               <Menu size={22} />
             </button>
 
-            <nav className="hidden min-w-0 items-center justify-start gap-1 lg:flex">
+            <nav className="hidden min-w-0 items-center justify-start gap-0.5 lg:flex xl:gap-1">
               {leftLinks.map((item) => (
-                <Link key={item.href} href={item.href} className="whitespace-nowrap rounded-full px-3 py-2 text-[0.68rem] uppercase tracking-[0.13em] transition hover:bg-ink hover:text-porcelain xl:px-4">
+                <Link key={item.href} href={item.href} className="whitespace-nowrap rounded-full px-2.5 py-2 text-[0.68rem] uppercase tracking-[0.13em] transition hover:bg-ink hover:text-porcelain xl:px-4">
                   {text(item.label, locale)}
                 </Link>
               ))}
             </nav>
 
             <Link href={`/${locale}`} className="brand-mark justify-self-center px-2 py-2" aria-label={labels.home}>
-              <span className="brand-wordmark brand-wordmark-header">MUZA</span>
-              <span className="brand-kicker">Flowers Boutique</span>
-              <span className="brand-location">Lake Como</span>
+              <BrandLogo className="brand-logo-header" />
             </Link>
 
             <div className="flex min-w-0 items-center justify-end gap-1 lg:gap-2">
-              <nav className="hidden min-w-0 items-center justify-end gap-1 lg:flex">
+              <nav className="hidden min-w-0 items-center justify-end gap-0.5 lg:flex xl:gap-1">
                 {rightLinks.map((item) => (
-                  <Link key={item.href} href={item.href} className="whitespace-nowrap rounded-full px-3 py-2 text-[0.68rem] uppercase tracking-[0.13em] transition hover:bg-ink hover:text-porcelain xl:px-4">
+                  <Link key={item.href} href={item.href} className="whitespace-nowrap rounded-full px-2.5 py-2 text-[0.68rem] uppercase tracking-[0.13em] transition hover:bg-ink hover:text-porcelain xl:px-4">
                     {text(item.label, locale)}
                   </Link>
                 ))}
@@ -97,9 +96,7 @@ export function Header({ locale }: { locale: Locale }) {
         <div className="mobile-menu-paper fixed inset-0 z-50 overflow-y-auto">
           <div className="container-shell flex min-h-[96px] items-center justify-between">
             <Link href={`/${locale}`} className="brand-mark" aria-label={labels.home} onClick={() => setOpen(false)}>
-              <span className="brand-wordmark brand-wordmark-header">MUZA</span>
-              <span className="brand-kicker">Flowers Boutique</span>
-              <span className="brand-location">Lake Como</span>
+              <BrandLogo className="brand-logo-header" />
             </Link>
             <button className="flex min-h-12 min-w-12 items-center justify-center rounded-full border border-[var(--border)] bg-porcelain/95 shadow-[0_12px_34px_rgba(22,22,22,0.08)] transition hover:bg-ink hover:text-porcelain" aria-label={labels.closeMenu} onClick={() => setOpen(false)}>
               <X />

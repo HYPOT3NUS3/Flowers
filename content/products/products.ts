@@ -51,7 +51,7 @@ export const products: Product[] = [
     madeToOrder: false,
     minimumLeadTimeHours: 24,
     seoTitle: { ru: "Шелковое озеро - букет", en: "Silk Lake bouquet", it: "Bouquet Lago di Seta" },
-    seoDescription: { ru: "Деликатная композиция MUZA.", en: "A delicate MUZA arrangement.", it: "Una composizione delicata MUZA." }
+    seoDescription: { ru: "Деликатная композиция go love.", en: "A delicate go love arrangement.", it: "Una composizione delicata go love." }
   },
   {
     id: "p-003",
@@ -91,7 +91,7 @@ export const products: Product[] = [
     madeToOrder: true,
     minimumLeadTimeHours: 36,
     seoTitle: { ru: "Воздух Блевио", en: "Blevio Air", it: "Aria di Blevio" },
-    seoDescription: { ru: "Пастельная композиция MUZA.", en: "Pastel arrangement by MUZA.", it: "Composizione pastello MUZA." }
+    seoDescription: { ru: "Пастельная композиция go love.", en: "Pastel arrangement by go love.", it: "Composizione pastello go love." }
   },
   {
     id: "p-005",
@@ -151,7 +151,7 @@ export const products: Product[] = [
     madeToOrder: true,
     minimumLeadTimeHours: 48,
     seoTitle: { ru: "Голубой час", en: "Blue Hour arrangement", it: "Composizione Ora Blu" },
-    seoDescription: { ru: "Фарфорово-голубая композиция MUZA.", en: "Porcelain-blue arrangement by MUZA.", it: "Composizione azzurro porcellana MUZA." }
+    seoDescription: { ru: "Фарфорово-голубая композиция go love.", en: "Porcelain-blue arrangement by go love.", it: "Composizione azzurro porcellana go love." }
   },
   {
     id: "p-008",
@@ -251,7 +251,7 @@ export const products: Product[] = [
     madeToOrder: true,
     minimumLeadTimeHours: 96,
     seoTitle: { ru: "Индивидуальный проект у озера", en: "Lake Commission floral art", it: "Arte floreale Commissione del Lago" },
-    seoDescription: { ru: "Флористический арт-объект MUZA.", en: "A floral art object by MUZA.", it: "Un oggetto d'arte floreale MUZA." }
+    seoDescription: { ru: "Флористический арт-объект go love.", en: "A floral art object by go love.", it: "Un oggetto d'arte floreale go love." }
   }
 ];
 

@@ -6,7 +6,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const { locale } = await params;
   return (
     <section className="container-shell py-14 text-center md:py-20">
-      <p className="label text-toile">MUZA Lake Como</p>
+      <p className="label text-toile">go love flowers boutique</p>
       <h1 className="serif mx-auto mt-4 max-w-4xl text-6xl leading-none md:text-8xl">{locale === "ru" ? "О студии" : locale === "it" ? "Chi siamo" : "About the studio"}</h1>
       <div className="mt-10 grid gap-8 md:grid-cols-2">
         {text(homeCopy.philosophy, locale).split("\n\n").map((paragraph) => <p key={paragraph} className="serif text-4xl leading-tight">{paragraph}</p>)}

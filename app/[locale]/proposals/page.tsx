@@ -6,9 +6,9 @@ export default async function ProposalsPage({ params }: { params: Promise<{ loca
   return (
     <ServicePage
       locale={locale}
-      label={locale === "ru" ? "Предложения" : locale === "it" ? "Proposte" : "Proposals"}
+      label={locale === "ru" ? "Предложение руки и сердца" : locale === "it" ? "Proposta di matrimonio" : "Marriage proposal"}
       title={locale === "ru" ? "Предложения руки и сердца" : locale === "it" ? "Proposte di matrimonio" : "Marriage proposals"}
-      body={locale === "ru" ? "Флористические арт-объекты, романтические локации, лодки, виллы и камерные сценарии для самого важного момента." : locale === "it" ? "Oggetti d'arte floreale, location romantiche, barche, ville e scenografie intime per il momento più importante." : "Floral art objects, romantic locations, boats, villas and intimate scenarios for the most important moment."}
+      body={locale === "ru" ? "Цветочное оформление романтических локаций, лодок и вилл для ваших главных признаний." : locale === "it" ? "Allestimenti floreali per location romantiche, barche e ville, pensati per le vostre dichiarazioni piu importanti." : "Floral styling for romantic locations, boats and villas for your most important declarations."}
       image="/assets/editorial/generated/proposal-lakeside.png"
     />
   );

@@ -21,8 +21,8 @@
   },
   "home": {
     "signature": "THE SIGNATURE COLLECTION",
-    "signatureText": "A curated collection of expressive arrangements for delivery across Como and the lake shore.",
-    "budgetTitle": "Choose the scale of your arrangement",
+    "signatureText": "A collection of signature bouquets and floral arrangements.",
+    "budgetTitle": "Choose the arrangement size",
     "philosophyLabel": "Studio philosophy",
     "missionLabel": "Mission",
     "servicesLabel": "Services",
@@ -36,8 +36,8 @@
     "deliveryText": "Como centre, lake shore towns, villas and custom destinations are calculated through editable delivery zones."
   },
   "shop": {
-    "title": "MUZA Collections",
-    "intro": "Signature bouquets, table arrangements and bespoke floral commissions for Como and the lake.",
+    "title": "Collections",
+    "intro": "Signature bouquets, baskets, arrangements and bespoke orders for special moments.",
     "count": "products",
     "empty": "No products match these filters.",
     "category": "Category"

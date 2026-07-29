@@ -8,7 +8,7 @@ export default function NotFound() {
         <h1 className="serif mt-4 text-6xl">Страница не найдена</h1>
         <p className="mt-4 text-graphite">Page not found / Pagina non trovata</p>
         <Link href="/ru" className="button-primary mt-8">
-          MUZA
+          go love
         </Link>
       </div>
     </main>

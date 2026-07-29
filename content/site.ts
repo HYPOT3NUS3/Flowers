@@ -1,9 +1,9 @@
 import { LocalizedText } from "@/lib/localization/strings";
 
 export const siteSettings = {
-  brandName: "MUZA",
+  brandName: "go love",
   descriptor: "Lake Como",
-  logo: "/assets/references/moodboard-reference-05-toile.png",
+  logo: "/assets/logo/go-love-logo.svg",
   announcement: {
     ru: "Доставка по Комо и побережью озера",
     en: "Delivery across Como and the Lake Como area",
@@ -35,7 +35,7 @@ export const siteSettings = {
 export const navItems = [
   { href: "/about", label: { ru: "О студии", en: "About", it: "Chi siamo" } },
   { href: "/shop", label: { ru: "Коллекции", en: "Collections", it: "Collezioni" } },
-  { href: "/proposals", label: { ru: "Предложения", en: "Proposals", it: "Proposte" } },
+  { href: "/proposals", label: { ru: "Предложение руки и сердца", en: "Marriage proposal", it: "Proposta di matrimonio" } },
   { href: "/weddings", label: { ru: "Свадьбы", en: "Weddings", it: "Matrimoni" } },
   { href: "/events", label: { ru: "Мероприятия", en: "Events", it: "Eventi" } },
   { href: "/delivery", label: { ru: "Доставка", en: "Delivery", it: "Consegna" } }
@@ -91,9 +91,9 @@ export const homeCopy = {
     it: "Floristica d'autore sul Lago di Como."
   },
   heroText: {
-    ru: "Элегантные композиции для подарков, свадеб и особых моментов.",
-    en: "Elegant florals for gifts, weddings and meaningful moments.",
-    it: "Fiori eleganti per regali, matrimoni e momenti speciali."
+    ru: "Элегантные букеты и композиции для особых моментов.",
+    en: "Elegant bouquets and floral arrangements for life's special moments.",
+    it: "Bouquet e composizioni eleganti per i momenti speciali."
   },
   philosophy: {
     ru: "Авторская флористика для тех, кто видит в цветах характер, чувство и тихую роскошь.",
@@ -101,8 +101,8 @@ export const homeCopy = {
     it: "Floristica d'autore per chi vede nei fiori carattere, emozione e lusso discreto."
   },
   mission: {
-    ru: "Каждая доставка — персональный жест внимания.",
-    en: "Every delivery becomes a personal gesture.",
-    it: "Ogni consegna diventa un gesto personale."
+    ru: "Искренняя забота в каждой доставке.",
+    en: "Sincere care in every delivery.",
+    it: "Cura sincera in ogni consegna."
   }
 };

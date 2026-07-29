@@ -25,7 +25,7 @@ export function EnquiryForm({ locale, compact = false }: { locale: Locale; compa
     setStatus("loading");
     try {
       const message = [
-        locale === "ru" ? "Здравствуйте! Хочу обсудить индивидуальный заказ MUZA." : locale === "it" ? "Buongiorno! Vorrei parlare di un ordine su misura MUZA." : "Hello! I would like to discuss a bespoke MUZA order.",
+        locale === "ru" ? "Здравствуйте! Хочу обсудить индивидуальный заказ go love." : locale === "it" ? "Buongiorno! Vorrei parlare di un ordine su misura go love." : "Hello! I would like to discuss a bespoke go love order.",
         "",
         `${locale === "ru" ? "Имя" : locale === "it" ? "Nome" : "Name"}: ${values.name}`,
         `Email: ${values.email}`,

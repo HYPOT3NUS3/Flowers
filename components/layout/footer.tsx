@@ -2,6 +2,7 @@ import Link from "next/link";
 import { navItems, siteSettings } from "@/content/site";
 import { Locale, locales } from "@/lib/localization/config";
 import { text } from "@/lib/localization/strings";
+import { BrandLogo } from "@/components/layout/brand-logo";
 
 export function Footer({ locale }: { locale: Locale }) {
   return (
@@ -9,16 +10,14 @@ export function Footer({ locale }: { locale: Locale }) {
       <div className="container-shell grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <div className="brand-mark text-left">
-            <span className="brand-wordmark">MUZA</span>
-            <span className="brand-kicker">Flowers Boutique</span>
-            <span className="brand-location">Lake Como</span>
+            <BrandLogo className="brand-logo-footer" />
           </div>
           <p className="mt-5 max-w-sm text-sm leading-7 text-graphite">
             {locale === "ru"
-              ? "MUZA Lake Como. Авторская флористика, доставка, свадьбы, предложения и мастер-классы."
+              ? "go love. Авторская флористика, доставка, свадьбы, предложения и мастер-классы на озере Комо."
               : locale === "it"
-                ? "MUZA Lake Como. Floristica editoriale, consegne, matrimoni, proposte e workshop."
-                : "MUZA Lake Como. Editorial floristry, delivery, weddings, proposals and workshops."}
+                ? "go love. Floristica d'autore, consegne, matrimoni, proposte e workshop sul Lago di Como."
+                : "go love. Artful floristry, delivery, weddings, proposals and workshops on Lake Como."}
           </p>
         </div>
         <div>
