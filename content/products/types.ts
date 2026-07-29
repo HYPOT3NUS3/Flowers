@@ -41,9 +41,9 @@ export const budgetBands: {
     id: "150-200",
     label: "€150-€200",
     description: {
-      ru: "Деликатные композиции среднего масштаба.",
-      en: "Refined compositions of a delicate medium scale.",
-      it: "Composizioni raffinate di delicata dimensione media."
+      ru: "Деликатные композиции среднего размера.",
+      en: "Refined medium-size compositions.",
+      it: "Composizioni raffinate di dimensione media."
     }
   },
   {
@@ -68,9 +68,9 @@ export const budgetBands: {
     id: "500-plus",
     label: "€500+",
     description: {
-      ru: "Индивидуальное флористическое искусство и VIP-композиции.",
-      en: "Luxury bespoke floral art and VIP commissions.",
-      it: "Arte floreale su misura e commissioni VIP."
+      ru: "Авторская флористика и VIP-композиции.",
+      en: "Signature floristry and VIP compositions.",
+      it: "Floristica d'autore e composizioni VIP."
     }
   }
 ];
