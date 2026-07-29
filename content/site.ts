@@ -1,7 +1,7 @@
 import { LocalizedText } from "@/lib/localization/strings";
 
 export const siteSettings = {
-  brandName: "go love",
+  brandName: "Go Love",
   descriptor: "Lake Como",
   logo: "/assets/logo/go-love-logo.svg",
   announcement: {

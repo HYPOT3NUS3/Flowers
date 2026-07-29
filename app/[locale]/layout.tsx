@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   return {
-    title: "go love flowers boutique Lake Como",
+    title: "Go Love flowers boutique Lake Como",
     description: "Premium floral design, delivery, weddings and events on Lake Como.",
     metadataBase: new URL(base),
     icons: {
@@ -35,13 +35,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       }
     },
     openGraph: {
-      title: "go love flowers boutique Lake Como",
+      title: "Go Love flowers boutique Lake Como",
       description: "Artful floristry on Lake Como.",
       images: [siteSettings.logo]
     },
     twitter: {
       card: "summary_large_image",
-      title: "go love flowers boutique Lake Como",
+      title: "Go Love flowers boutique Lake Como",
       description: "Artful floristry on Lake Como."
     }
   };

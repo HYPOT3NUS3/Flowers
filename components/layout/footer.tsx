@@ -14,10 +14,10 @@ export function Footer({ locale }: { locale: Locale }) {
           </div>
           <p className="mt-5 max-w-sm text-sm leading-7 text-graphite">
             {locale === "ru"
-              ? "go love. Авторская флористика, доставка, свадьбы, предложения и мастер-классы на озере Комо."
+              ? "Go Love. Авторская флористика, доставка, свадьбы, предложения и мастер-классы на озере Комо."
               : locale === "it"
-                ? "go love. Floristica d'autore, consegne, matrimoni, proposte e workshop sul Lago di Como."
-                : "go love. Artful floristry, delivery, weddings, proposals and workshops on Lake Como."}
+                ? "Go Love. Floristica d'autore, consegne, matrimoni, proposte e workshop sul Lago di Como."
+                : "Go Love. Artful floristry, delivery, weddings, proposals and workshops on Lake Como."}
           </p>
         </div>
         <div>

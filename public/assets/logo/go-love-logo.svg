@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 190" role="img" aria-labelledby="title">
-  <title id="title">go love flowers boutique Lake Como</title>
+  <title id="title">Go Love flowers boutique Lake Como</title>
   <style>
     text {
       fill: #161616;
@@ -13,20 +13,20 @@
       letter-spacing: 0.01em;
     }
     .kicker {
-      font-family: "El Messiri", Avenir, Inter, ui-sans-serif, system-ui, sans-serif;
+      font-family: "Avenir Next", Avenir, "Century Gothic", Futura, Inter, ui-sans-serif, system-ui, sans-serif;
       font-size: 25px;
       font-weight: 400;
       letter-spacing: 0.02em;
     }
     .location {
-      font-family: "El Messiri", Avenir, Inter, ui-sans-serif, system-ui, sans-serif;
+      font-family: "Avenir Next", Avenir, "Century Gothic", Futura, Inter, ui-sans-serif, system-ui, sans-serif;
       font-size: 17px;
       font-weight: 400;
       letter-spacing: 0.42em;
       fill: #5e5e5e;
     }
   </style>
-  <text class="main" x="210" y="79">go love</text>
+  <text class="main" x="210" y="79">Go Love</text>
   <text class="kicker" x="210" y="128">flowers boutique</text>
-  <text class="location" x="210" y="166">LAKE COMO</text>
+  <text class="location" x="210" y="158">LAKE COMO</text>
 </svg>

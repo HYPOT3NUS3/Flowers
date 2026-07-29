@@ -28,7 +28,7 @@ export function Header({ locale }: { locale: Locale }) {
   const labels = {
     openMenu: locale === "ru" ? "Открыть меню" : locale === "it" ? "Apri menu" : "Open menu",
     closeMenu: locale === "ru" ? "Закрыть меню" : locale === "it" ? "Chiudi menu" : "Close menu",
-    home: locale === "ru" ? "go love, главная" : locale === "it" ? "go love, home" : "go love home",
+    home: locale === "ru" ? "Go Love, главная" : locale === "it" ? "Go Love, home" : "Go Love home",
     search: locale === "ru" ? "Поиск по каталогу" : locale === "it" ? "Cerca nel catalogo" : "Search catalogue",
     shoppingBag: locale === "ru" ? "Открыть корзину" : locale === "it" ? "Apri il carrello" : "Open cart",
     contacts: locale === "ru" ? "Контакты" : locale === "it" ? "Contatti" : "Contacts"

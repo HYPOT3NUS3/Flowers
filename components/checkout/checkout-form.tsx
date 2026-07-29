@@ -67,7 +67,7 @@ export function CheckoutForm({ locale }: { locale: Locale }) {
         `- ${item.title} x ${item.quantity} (${formatCurrency(item.price * item.quantity)})${item.deliveryDate ? `, ${item.deliveryDate}` : ""}${item.deliveryTimeSlot ? `, ${item.deliveryTimeSlot}` : ""}`
       );
       const message = [
-        locale === "ru" ? "Здравствуйте! Хочу оформить заказ go love." : locale === "it" ? "Buongiorno! Vorrei confermare un ordine go love." : "Hello! I would like to place a go love order.",
+        locale === "ru" ? "Здравствуйте! Хочу оформить заказ Go Love." : locale === "it" ? "Buongiorno! Vorrei confermare un ordine Go Love." : "Hello! I would like to place a Go Love order.",
         "",
         locale === "ru" ? "Состав заказа:" : locale === "it" ? "Ordine:" : "Order:",
         ...orderLines,
