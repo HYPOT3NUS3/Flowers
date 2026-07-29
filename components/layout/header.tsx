@@ -41,7 +41,7 @@ export function Header({ locale }: { locale: Locale }) {
       </div>
       <header className="sticky top-0 z-40 px-3 py-2 lg:static lg:py-3">
         <div className="container-shell overflow-hidden rounded-[2rem] border border-[var(--border)] bg-porcelain/88 shadow-[0_18px_60px_rgba(22,22,22,0.08)] backdrop-blur-2xl">
-          <div className="grid min-h-[78px] grid-cols-[auto_1fr_auto] items-center gap-3 px-4 md:min-h-[82px] md:px-6 lg:min-h-[104px] lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:gap-5">
+          <div className="grid min-h-[78px] grid-cols-[auto_1fr_auto] items-center gap-3 px-4 md:min-h-[82px] md:px-6 lg:min-h-[104px] lg:grid-cols-[minmax(0,1.2fr)_auto_minmax(0,0.8fr)] lg:gap-5 xl:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
             <button className="flex min-h-11 min-w-11 items-center justify-center rounded-full transition hover:bg-ink hover:text-porcelain lg:hidden" aria-label={labels.openMenu} onClick={() => setOpen(true)}>
               <Menu size={22} />
             </button>

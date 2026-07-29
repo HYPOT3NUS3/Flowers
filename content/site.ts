@@ -47,9 +47,9 @@ export const services = [
     href: "/shop",
     title: { ru: "Премиальные коллекции", en: "Premium collections", it: "Collezioni premium" },
     body: {
-      ru: "Авторские букеты в нескольких масштабах для подарка, виллы или события.",
-      en: "Signature bouquets for gifting, villas and refined occasions.",
-      it: "Bouquet d'autore per regali, ville e occasioni raffinate."
+      ru: "Авторские букеты, корзины, цветочные композиции.",
+      en: "Signature bouquets, baskets and floral arrangements.",
+      it: "Bouquet d'autore, ceste e composizioni floreali."
     }
   },
   {
@@ -57,9 +57,9 @@ export const services = [
     href: "/weddings",
     title: { ru: "Свадебная флористика", en: "Wedding floristry", it: "Floristica per matrimoni" },
     body: {
-      ru: "Камерные церемонии, арки, букеты невесты и полное цветочное оформление.",
-      en: "Ceremonies, arches, bridal bouquets and complete floral direction.",
-      it: "Cerimonie, archi, bouquet da sposa e direzione floreale completa."
+      ru: "Оформление свадебной арки, декор президиума, оформление гостевых столов, авторский букет невесты, букеты и аксессуары для подружек невесты.",
+      en: "Wedding arch styling, sweetheart table decor, guest table flowers, a signature bridal bouquet, bridesmaids' bouquets and floral accessories.",
+      it: "Allestimento dell'arco nuziale, decorazione del tavolo degli sposi, fiori per i tavoli degli ospiti, bouquet da sposa d'autore, bouquet e accessori floreali per le damigelle."
     }
   },
   {
@@ -77,9 +77,9 @@ export const services = [
     href: "/events",
     title: { ru: "Мероприятия и воркшопы", en: "Events and workshops", it: "Eventi e workshop" },
     body: {
-      ru: "Мастер-классы, девичники и эстетичные встречи с цветами.",
-      en: "Workshops, creative gatherings and flower-led celebrations.",
-      it: "Workshop, incontri creativi e celebrazioni con i fiori."
+      ru: "Мастер-классы, девичники и бизнес-встречи на озере Комо.",
+      en: "Workshops, bridal gatherings and business meetings on Lake Como.",
+      it: "Workshop, addii al nubilato e incontri business sul Lago di Como."
     }
   }
 ];
