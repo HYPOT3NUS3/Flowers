@@ -79,7 +79,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => (
             <Link key={service.slug} href={`/${locale}${service.href}`} className="surface-panel lift-card p-6">
-              <h3 className="serif text-3xl leading-none">{text(service.title, locale)}</h3>
+              <h3 className="serif break-words text-3xl leading-tight">{text(service.title, locale)}</h3>
               <p className="mt-5 line-clamp-3 text-sm leading-7 text-graphite">{text(service.body, locale)}</p>
             </Link>
           ))}

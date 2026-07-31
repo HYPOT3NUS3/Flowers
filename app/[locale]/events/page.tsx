@@ -16,9 +16,9 @@ export default async function EventsPage({ params }: { params: Promise<{ locale:
   return (
     <section className="container-shell py-14 text-center md:py-20">
       <div className="flex flex-col items-center gap-4 md:flex-row md:items-end md:justify-between md:text-left">
-        <div>
+        <div className="min-w-0">
           <p className="label text-toile">{copy.label}</p>
-          <h1 className="serif mx-auto mt-4 max-w-4xl text-6xl leading-none md:mx-0 md:text-8xl">{copy.title}</h1>
+          <h1 className="serif mx-auto mt-4 max-w-full break-words text-5xl leading-none sm:text-6xl md:mx-0 md:text-8xl">{copy.title}</h1>
         </div>
         <Link href={`/${locale}/events/archive`} className="button-secondary">{copy.archive}</Link>
       </div>

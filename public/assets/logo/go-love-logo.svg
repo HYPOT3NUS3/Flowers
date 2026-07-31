@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 190" role="img" aria-labelledby="title">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 252" role="img" aria-labelledby="title">
   <title id="title">Go Love flowers boutique Lake Como</title>
   <style>
     text {
@@ -8,25 +8,30 @@
     }
     .main {
       font-family: "Bodoni 72", Didot, "Times New Roman", serif;
-      font-size: 76px;
+      font-size: 108px;
       font-weight: 400;
-      letter-spacing: 0.01em;
+      letter-spacing: 0;
+    }
+    .rule {
+      stroke: #161616;
+      stroke-width: 1.2;
+      vector-effect: non-scaling-stroke;
     }
     .kicker {
       font-family: "Avenir Next", Avenir, "Century Gothic", Futura, Inter, ui-sans-serif, system-ui, sans-serif;
-      font-size: 25px;
+      font-size: 29px;
       font-weight: 400;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.38em;
     }
     .location {
       font-family: "Avenir Next", Avenir, "Century Gothic", Futura, Inter, ui-sans-serif, system-ui, sans-serif;
-      font-size: 17px;
+      font-size: 19px;
       font-weight: 400;
-      letter-spacing: 0.42em;
-      fill: #5e5e5e;
+      letter-spacing: 0.43em;
     }
   </style>
-  <text class="main" x="210" y="79">Go Love</text>
-  <text class="kicker" x="210" y="126">FLOWERS BOUTIQUE</text>
-  <text class="location" x="210" y="160">LAKE COMO</text>
+  <text class="main" x="280" y="108">Go Love</text>
+  <line class="rule" x1="68" y1="151" x2="492" y2="151" />
+  <text class="kicker" x="280" y="203">FLOWERS BOUTIQUE</text>
+  <text class="location" x="280" y="238">LAKE COMO</text>
 </svg>

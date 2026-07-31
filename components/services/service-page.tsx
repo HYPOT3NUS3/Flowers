@@ -23,7 +23,7 @@ export function ServicePage({
       <section className="container-shell grid gap-10 py-14 text-center md:grid-cols-[0.95fr_1.05fr] md:items-center md:py-20 md:text-left">
         <div className="mx-auto min-w-0 max-w-full md:mx-0 md:max-w-3xl">
           <p className="label text-toile">{label}</p>
-          <h1 className="serif mx-auto mt-4 max-w-4xl text-5xl leading-none sm:text-6xl md:mx-0 md:text-7xl lg:text-8xl">{title}</h1>
+          <h1 className="serif mx-auto mt-4 max-w-4xl break-words text-5xl leading-none sm:text-6xl md:mx-0 lg:text-7xl xl:text-8xl">{title}</h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-graphite md:mx-0">{body}</p>
           <Link href={`/${locale}/contact?service=${label}`} className="button-primary mt-8">
             {locale === "ru" ? "Отправить запрос" : locale === "it" ? "Invia una richiesta" : "Send enquiry"}
@@ -39,7 +39,7 @@ export function ServicePage({
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => (
               <Link key={service.slug} href={`/${locale}${service.href}`} className="surface-panel lift-card rounded-[1.25rem] p-6 text-center">
-                <h2 className="serif text-3xl leading-none">{text(service.title, locale)}</h2>
+                <h2 className="serif break-words text-3xl leading-tight">{text(service.title, locale)}</h2>
                 <p className="mt-5 text-sm leading-7 text-graphite">{text(service.body, locale)}</p>
               </Link>
             ))}

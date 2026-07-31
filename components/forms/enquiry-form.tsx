@@ -63,23 +63,23 @@ export function EnquiryForm({ locale, compact = false }: { locale: Locale; compa
   };
   const errorFor = (field: keyof EnquiryValues) => errors[field] ? errorLabels[field] : null;
 
-  const fieldClass = "w-full field-shell px-3 py-3 text-sm";
+  const fieldClass = "min-w-0 w-full field-shell px-3 py-3 text-sm";
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={`grid gap-4 ${compact ? "" : "md:grid-cols-2"}`}>
       {(["name", "email", "phone", "occasion", "date", "budget"] as const).map((field) => (
-        <label key={field} className="grid gap-2 text-sm">
+        <label key={field} className="grid min-w-0 gap-2 text-sm">
           {labels[field]}
           <input className={fieldClass} type={field === "date" ? "date" : "text"} {...register(field)} />
           {errorFor(field) ? <span className="text-xs text-red-700">{errorFor(field)}</span> : null}
         </label>
       ))}
-      <label className={`grid gap-2 text-sm ${compact ? "" : "md:col-span-2"}`}>
+      <label className={`grid min-w-0 gap-2 text-sm ${compact ? "" : "md:col-span-2"}`}>
         {labels.message}
         <textarea className={`${fieldClass} min-h-28`} {...register("message")} />
         {errorFor("message") ? <span className="text-xs text-red-700">{errorFor("message")}</span> : null}
       </label>
-      <label className="grid gap-2 text-sm">
+      <label className="grid min-w-0 gap-2 text-sm">
         {locale === "ru" ? "Язык связи" : locale === "it" ? "Lingua di contatto" : "Preferred contact language"}
         <select className={fieldClass} {...register("preferredLanguage")}>
           <option value="ru">RU</option>
