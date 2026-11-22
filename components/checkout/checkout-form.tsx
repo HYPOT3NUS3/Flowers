@@ -67,7 +67,7 @@ export function CheckoutForm({ locale }: { locale: Locale }) {
         `- ${item.title} x ${item.quantity} (${formatCurrency(item.price * item.quantity)})${item.deliveryDate ? `, ${item.deliveryDate}` : ""}${item.deliveryTimeSlot ? `, ${item.deliveryTimeSlot}` : ""}`
       );
       const message = [
-        locale === "ru" ? "Здравствуйте! Хочу оформить заказ Go Love." : locale === "it" ? "Buongiorno! Vorrei confermare un ordine Go Love." : "Hello! I would like to place a Go Love order.",
+        locale === "ru" ? "Здравствуйте! Хочу оформить заказ Flowers Boutique." : locale === "it" ? "Buongiorno! Vorrei confermare un ordine Flowers Boutique." : "Hello! I would like to place a Flowers Boutique order.",
         "",
         locale === "ru" ? "Состав заказа:" : locale === "it" ? "Ordine:" : "Order:",
         ...orderLines,
@@ -148,10 +148,10 @@ export function CheckoutForm({ locale }: { locale: Locale }) {
     error: locale === "ru" ? "Не удалось подготовить заказ. Попробуйте еще раз." : locale === "it" ? "Impossibile preparare l'ordine. Riprova." : "Failed to prepare the order. Please try again."
   };
   const field = "w-full field-shell px-3 py-3 text-sm";
-  const sectionTitle = "serif text-3xl";
+  const sectionTitle = "checkout-heading";
 
   if (!items.length) {
-    return <p className="serif text-4xl">{copy.empty}</p>;
+    return <p className="section-title">{copy.empty}</p>;
   }
 
   return (
@@ -210,7 +210,7 @@ export function CheckoutForm({ locale }: { locale: Locale }) {
         </section>
       </div>
       <aside className="surface-panel h-fit p-5">
-        <h2 className="serif text-3xl">{copy.order}</h2>
+        <h2 className="checkout-heading">{copy.order}</h2>
         <div className="mt-5 grid gap-3 text-sm">
           {items.map((item) => (
             <div key={item.id} className="flex justify-between gap-3">

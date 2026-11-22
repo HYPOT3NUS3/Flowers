@@ -1,4 +1,4 @@
-# Go Love flowers boutique Lake Como
+# Flowers Boutique Lake Como
 
 Premium mobile-first ecommerce site for an independent floral studio on Lake Como. The app is multilingual in Russian, English and Italian, with catalogue filtering, product pages, persistent cart, checkout validation, delivery-zone calculation, events, service enquiries, Instagram fallback, CMS structure and Stripe-ready endpoints.
 

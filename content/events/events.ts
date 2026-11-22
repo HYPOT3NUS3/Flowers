@@ -34,7 +34,7 @@ export const events: StudioEvent[] = [
     price: 145,
     seatsTotal: 12,
     seatsAvailable: 6,
-    images: ["/assets/editorial/generated/workshop-table.png"],
+    images: [],
     bookingEnabled: true,
     archived: false
   },
@@ -51,7 +51,7 @@ export const events: StudioEvent[] = [
     price: 180,
     seatsTotal: 10,
     seatsAvailable: 4,
-    images: ["/assets/editorial/generated/villa-interior.png"],
+    images: [],
     bookingEnabled: true,
     archived: false
   },
@@ -68,7 +68,7 @@ export const events: StudioEvent[] = [
     price: 160,
     seatsTotal: 14,
     seatsAvailable: 9,
-    images: ["/assets/products/generated/blue-white-bouquet.png"],
+    images: [],
     bookingEnabled: true,
     archived: false
   },
@@ -85,7 +85,7 @@ export const events: StudioEvent[] = [
     price: 120,
     seatsTotal: 12,
     seatsAvailable: 0,
-    images: ["/assets/editorial/generated/workshop-table.png"],
+    images: [],
     bookingEnabled: false,
     archived: true
   },
@@ -102,7 +102,7 @@ export const events: StudioEvent[] = [
     price: 150,
     seatsTotal: 10,
     seatsAvailable: 0,
-    images: ["/assets/editorial/generated/villa-interior.png"],
+    images: [],
     bookingEnabled: false,
     archived: true
   },
@@ -119,7 +119,7 @@ export const events: StudioEvent[] = [
     price: 95,
     seatsTotal: 8,
     seatsAvailable: 0,
-    images: ["/assets/editorial/generated/proposal-lakeside.png"],
+    images: [],
     bookingEnabled: false,
     archived: true
   }

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
+import "../fonts.css";
 import "../globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { CartDrawer } from "@/components/cart/cart-drawer";
 import { CookieConsent } from "@/components/layout/cookie-consent";
 import { FloatingWhatsApp } from "@/components/layout/floating-whatsapp";
+import { SmoothScroll } from "@/components/motion/smooth-scroll";
 import { isLocale, Locale, locales } from "@/lib/localization/config";
 import { siteSettings } from "@/content/site";
 
@@ -18,8 +20,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   return {
-    title: "Go Love flowers boutique Lake Como",
-    description: "Premium floral design, delivery, weddings and events on Lake Como.",
+    title: "Flowers Boutique | Lake Como",
+    description: "Flowers Boutique: premium floral design, delivery, weddings and events on Lake Como.",
     metadataBase: new URL(base),
     icons: {
       icon: siteSettings.logo,
@@ -35,14 +37,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       }
     },
     openGraph: {
-      title: "Go Love flowers boutique Lake Como",
-      description: "Artful floristry on Lake Como.",
+      title: "Flowers Boutique | Lake Como",
+      description: "Flowers Boutique: artful floristry on Lake Como.",
       images: [siteSettings.logo]
     },
     twitter: {
       card: "summary_large_image",
-      title: "Go Love flowers boutique Lake Como",
-      description: "Artful floristry on Lake Como."
+      title: "Flowers Boutique | Lake Como",
+      description: "Flowers Boutique: artful floristry on Lake Como."
     }
   };
 }
@@ -60,7 +62,7 @@ export default async function LocaleLayout({
   const messages = (await import(`../../content/messages/${locale}.json`)).default;
 
   return (
-    <html lang={locale}>
+    <html lang={locale} data-scroll-behavior="smooth">
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header locale={locale} />
@@ -69,6 +71,7 @@ export default async function LocaleLayout({
           <CartDrawer locale={locale} />
           <CookieConsent locale={locale} />
           <FloatingWhatsApp locale={locale} />
+          <SmoothScroll />
         </NextIntlClientProvider>
       </body>
     </html>

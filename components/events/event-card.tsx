@@ -17,13 +17,13 @@ export function EventCard({ event, locale }: { event: StudioEvent; locale: Local
   };
 
   return (
-    <article className="surface-panel grid gap-4 rounded-[1.25rem] p-4 text-left">
-      <div className="aspect-[5/3] overflow-hidden rounded-[1rem] bg-powder">
-        <ProductImage src={event.images[0]} alt={text(event.title, locale)} />
-      </div>
+    <article className="surface-panel grid min-w-0 content-start gap-3 rounded-xl p-3 text-left md:p-4">
+      {event.images[0] ? <div className="aspect-[5/3] overflow-hidden rounded-[1rem] bg-powder">
+        <ProductImage src={event.images[0]} alt="" sizes="(max-width: 767px) 90vw, 30vw" />
+      </div> : null}
       <div>
         <p className="label text-toile">{formatDate(event.date, locale)} / {event.startTime}-{event.endTime}</p>
-        <h3 className="serif mt-3 text-3xl leading-none">{text(event.title, locale)}</h3>
+        <h3 className="item-title mt-3">{text(event.title, locale)}</h3>
         <p className="mt-3 text-sm leading-6 text-graphite">{text(event.description, locale)}</p>
         <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
           <div><dt className="text-graphite">{labels.location}</dt><dd>{text(event.location, locale)}</dd></div>

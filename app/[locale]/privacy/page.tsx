@@ -21,7 +21,7 @@ function LegalPage({ label, title, body }: { label: string; title: string; body:
   return (
     <section className="container-shell py-14">
       <p className="label text-toile">{label}</p>
-      <h1 className="serif mt-4 text-6xl leading-none md:text-8xl">{title}</h1>
+      <h1 className="page-title mt-4">{title}</h1>
       <p className="mt-8 max-w-3xl leading-8 text-graphite">{body}</p>
     </section>
   );

@@ -7,7 +7,7 @@ export default async function OrderSuccessPage({ params }: { params: Promise<{ l
   return (
     <section className="container-shell py-20">
       <p className="label text-toile">{locale === "ru" ? "Заказ" : locale === "it" ? "Ordine" : "Order"}</p>
-      <h1 className="serif mt-4 text-6xl leading-none md:text-8xl">{locale === "ru" ? "Заказ создан." : locale === "it" ? "Ordine creato." : "Order created."}</h1>
+      <h1 className="page-title mt-4">{locale === "ru" ? "Заказ создан." : locale === "it" ? "Ordine creato." : "Order created."}</h1>
       <p className="mt-6 max-w-2xl text-lg leading-8 text-graphite">
         {locale === "ru" ? siteSettings.revolutInstructions.ru : locale === "it" ? siteSettings.revolutInstructions.it : siteSettings.revolutInstructions.en}
       </p>

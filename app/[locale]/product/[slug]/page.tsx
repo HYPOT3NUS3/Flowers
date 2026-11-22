@@ -42,7 +42,7 @@ export default async function ProductPage({ params }: { params: Promise<{ locale
     "@type": "Product",
     name: title,
     description: text(product.shortDescription, locale),
-    image: product.images,
+    image: product.images.filter((image) => !image.endsWith("/product-placeholder.svg")),
     offers: {
       "@type": "Offer",
       priceCurrency: "EUR",
@@ -54,11 +54,11 @@ export default async function ProductPage({ params }: { params: Promise<{ locale
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <section className="container-shell grid gap-10 py-10 md:grid-cols-[1.05fr_0.95fr] md:py-16">
+      <section className="container-shell grid items-start gap-5 py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-10 md:py-12">
         <div className="grid gap-4">
           {product.images.map((image) => (
-            <div key={image} className="lift-card aspect-[4/5] overflow-hidden border border-[var(--border)] bg-porcelain">
-              <ProductImage src={image} alt={title} />
+            <div key={image} className="aspect-[4/5] max-h-[68svh] w-full self-start overflow-hidden rounded-xl border border-[var(--border)] bg-porcelain md:max-h-[calc(100svh-10rem)]">
+              <ProductImage src={image} alt={title} loading="eager" sizes="(max-width: 767px) 94vw, 49vw" className="block h-full w-full object-cover" />
             </div>
           ))}
         </div>
@@ -78,7 +78,7 @@ export default async function ProductPage({ params }: { params: Promise<{ locale
         ))}
       </section>
       <section className="container-shell section-pad">
-        <h2 className="serif text-5xl leading-none">{locale === "ru" ? "Похожие композиции" : locale === "it" ? "Composizioni correlate" : "Related arrangements"}</h2>
+        <h2 className="section-title">{locale === "ru" ? "Похожие композиции" : locale === "it" ? "Composizioni correlate" : "Related arrangements"}</h2>
         <div className="product-grid mt-10">
           {related.map((item) => <ProductCard key={item.id} product={item} locale={locale} />)}
         </div>

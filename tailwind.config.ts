@@ -18,8 +18,8 @@ const config: Config = {
         botanical: "#B6C0BC"
       },
       fontFamily: {
-        serif: ["var(--font-editorial)", "Georgia", "serif"],
-        sans: ["var(--font-manrope)", "Inter", "Arial", "sans-serif"]
+        serif: ["var(--font-editorial)"],
+        sans: ["var(--font-manrope)"]
       }
     }
   },

@@ -14,18 +14,18 @@ export default async function EventsPage({ params }: { params: Promise<{ locale:
   };
 
   return (
-    <section className="container-shell py-14 text-center md:py-20">
+    <section className="container-shell py-8 text-center md:py-16">
       <div className="flex flex-col items-center gap-4 md:flex-row md:items-end md:justify-between md:text-left">
         <div className="min-w-0">
           <p className="label text-toile">{copy.label}</p>
-          <h1 className="serif mx-auto mt-4 max-w-full break-words text-5xl leading-none sm:text-6xl md:mx-0 md:text-8xl">{copy.title}</h1>
+          <h1 className="page-title editorial-italic mx-auto mt-4 max-w-full break-words md:mx-0">{copy.title}</h1>
         </div>
         <Link href={`/${locale}/events/archive`} className="button-secondary">{copy.archive}</Link>
       </div>
-      <div className="mt-10 grid gap-5 md:grid-cols-3">
+      <div className="mt-6 grid md:mt-10 gap-5 md:grid-cols-3">
         {events.length ? events.map((event) => <EventCard key={event.id} event={event} locale={locale} />) : (
           <div className="border border-[var(--border)] bg-porcelain p-10">
-            <p className="serif text-4xl">{copy.empty}</p>
+            <p className="section-title">{copy.empty}</p>
           </div>
         )}
       </div>

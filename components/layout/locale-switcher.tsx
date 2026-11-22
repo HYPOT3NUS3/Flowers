@@ -19,6 +19,7 @@ export function LocaleSwitcher({ locale, className = "" }: { locale: Locale; cla
         <Link
           key={item}
           href={switchLocale(pathname, item)}
+          hrefLang={item}
           aria-current={item === locale ? "page" : undefined}
           className={`locale-switcher-pill ${item === locale ? "locale-switcher-pill-active" : ""}`}
         >

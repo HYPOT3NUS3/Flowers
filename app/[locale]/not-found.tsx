@@ -13,7 +13,7 @@ export default function LocaleNotFound() {
     <main className="grid min-h-screen place-items-center bg-ivory px-6 text-center">
       <div>
         <p className="label">404</p>
-        <h1 className="serif mt-4 text-6xl">
+        <h1 className="page-title mt-4">
           {locale === "ru" ? "Страница не найдена" : locale === "it" ? "Pagina non trovata" : "Page not found"}
         </h1>
         <Link href={`/${locale}`} className="button-primary mt-8">

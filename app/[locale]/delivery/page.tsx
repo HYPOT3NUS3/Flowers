@@ -27,14 +27,14 @@ export default async function DeliveryPage({ params }: { params: Promise<{ local
   return (
     <section className="container-shell py-14 text-center md:py-20">
       <p className="label text-toile">{copy.label}</p>
-      <h1 className="serif mx-auto mt-4 max-w-4xl text-6xl leading-none md:text-8xl">{copy.title}</h1>
+      <h1 className="page-title mx-auto mt-4 max-w-4xl">{copy.title}</h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-graphite">
         {copy.intro}
       </p>
       <div className="mt-10 grid gap-4 md:grid-cols-3">
         {deliveryZones.map((zone) => (
           <article key={zone.postalCodes.join("-")} className="surface-panel rounded-[1.25rem] p-6">
-            <h2 className="serif text-3xl">{text(zone.zoneName, locale)}</h2>
+            <h2 className="section-title">{text(zone.zoneName, locale)}</h2>
             <p className="mt-4 text-sm leading-7 text-graphite">{zone.townLabels.map((town) => text(town, locale)).join(", ")}</p>
             <p className="mt-4 text-sm">{copy.fee}: {formatCurrency(zone.deliveryFee)}</p>
             <p className="mt-2 text-sm">{copy.leadTime}: {zone.minimumLeadTimeHours} {copy.hours}</p>

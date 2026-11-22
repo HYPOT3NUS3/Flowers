@@ -22,28 +22,30 @@ export function BudgetFilter({ locale, title }: { locale: Locale; title: string 
   }
 
   return (
-    <section className="shop-clean-zone py-10 text-center md:py-12">
+    <section className="shop-clean-zone py-6 md:py-9">
       <div className="container-shell">
-        <div className="flex flex-col items-center gap-6 md:flex-row md:items-end md:justify-between md:text-left">
-          <h2 className="serif max-w-2xl text-4xl leading-none md:text-6xl">{title}</h2>
+        <div className="flex items-center justify-between gap-3">
+          <h2 className="item-title max-w-2xl">{title}</h2>
           <button
-            className="button-secondary w-fit"
+            className="button-secondary shrink-0"
+            aria-pressed={!active}
             onClick={() => selectBudget()}
           >
             {locale === "ru" ? "Все" : locale === "it" ? "Tutto" : "All"}
           </button>
         </div>
-        <div className="budget-scroll mt-8 flex gap-3 overflow-x-auto pb-2 text-left">
+        <div className="mt-4 grid grid-cols-2 gap-2.5 text-left sm:grid-cols-3 lg:mt-5 lg:grid-cols-5">
           {budgetBands.map((band) => (
             <button
               key={band.id}
-              className={`min-w-[220px] rounded-[1.4rem] p-4 text-left transition hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] ${
+              className={`min-w-0 rounded-xl p-3 text-left transition-colors last:col-span-2 hover:border-ink/50 sm:last:col-span-1 md:p-4 ${
                 active === band.id ? "border border-ink bg-ink text-porcelain" : "surface-panel"
               }`}
+              aria-pressed={active === band.id}
               onClick={() => selectBudget(band.id)}
             >
               <span className="label block">{band.label}</span>
-              <span className="mt-3 block text-sm leading-relaxed">{text(band.description, locale)}</span>
+              <span className="mt-1.5 block text-[0.82rem] leading-5 md:text-sm">{text(band.description, locale)}</span>
             </button>
           ))}
         </div>

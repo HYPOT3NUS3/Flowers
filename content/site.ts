@@ -1,9 +1,9 @@
 import { LocalizedText } from "@/lib/localization/strings";
 
 export const siteSettings = {
-  brandName: "Go Love",
+  brandName: "Flowers Boutique",
   descriptor: "Lake Como",
-  logo: "/assets/logo/go-love-logo.svg",
+  logo: "/assets/logo/boutique-flowers-logo.png",
   announcement: {
     ru: "Доставка по Комо и побережью озера",
     en: "Delivery across Como and the Lake Como area",

@@ -16,13 +16,15 @@ export function PurchasePanel({ product, locale }: { product: Product; locale: L
 
   return (
     <div className="md:sticky md:top-28">
-      <p className="label text-toile">
+      <h1 className="page-title">{title}</h1>
+      <p className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <span className="text-2xl tabular-nums">{formatCurrency(product.exactPrice)}</span>
+        <span className="text-sm text-graphite">
         {product.madeToOrder
           ? locale === "ru" ? "Под заказ" : locale === "it" ? "Su ordinazione" : "Made to order"
           : locale === "ru" ? "Готово к заказу" : locale === "it" ? "Pronto da ordinare" : "Ready to order"}
+        </span>
       </p>
-      <h1 className="serif mt-4 text-5xl leading-none md:text-7xl">{title}</h1>
-      <p className="mt-5 text-2xl">{formatCurrency(product.exactPrice)}</p>
       <p className="mt-6 leading-8 text-graphite">{text(product.shortDescription, locale)}</p>
       <div className="mt-8 grid gap-4">
         <label className="grid gap-2 text-sm">

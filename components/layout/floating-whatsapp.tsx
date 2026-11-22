@@ -5,10 +5,10 @@ import { whatsappUrl } from "@/lib/contact/whatsapp";
 export function FloatingWhatsApp({ locale }: { locale: Locale }) {
   const message =
     locale === "ru"
-      ? "Здравствуйте! У меня есть вопрос о Go Love."
+      ? "Здравствуйте! У меня есть вопрос о Flowers Boutique."
       : locale === "it"
-        ? "Buongiorno! Ho una domanda su Go Love."
-        : "Hello! I have a question about Go Love.";
+        ? "Buongiorno! Ho una domanda su Flowers Boutique."
+        : "Hello! I have a question about Flowers Boutique.";
   const label =
     locale === "ru"
       ? "Написать в WhatsApp"

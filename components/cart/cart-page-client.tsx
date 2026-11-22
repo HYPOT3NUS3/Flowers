@@ -31,7 +31,7 @@ export function CartPageClient({ locale }: { locale: Locale }) {
   if (!items.length) {
     return (
       <section className="container-shell py-20 text-center">
-        <h1 className="serif text-6xl">{copy.empty}</h1>
+        <h1 className="page-title">{copy.empty}</h1>
         <Link href={`/${locale}/shop`} className="button-primary mt-8">{copy.collections}</Link>
       </section>
     );
@@ -39,30 +39,30 @@ export function CartPageClient({ locale }: { locale: Locale }) {
 
   return (
     <section className="container-shell py-14">
-      <h1 className="serif text-6xl leading-none md:text-8xl">{copy.bag}</h1>
+      <h1 className="page-title">{copy.bag}</h1>
       <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_360px]">
         <div className="grid gap-5">
           {items.map((item) => (
-            <article key={item.id} className="surface-panel grid gap-4 p-4 sm:grid-cols-[150px_1fr_auto]">
-              <div className="aspect-[4/5] overflow-hidden border border-[var(--border)]">
-                <ProductImage src={item.image} alt={item.title} />
+            <article key={item.id} className="surface-panel grid grid-cols-[clamp(68px,24vw,110px)_minmax(0,1fr)] gap-3 rounded-[1.15rem] p-4 sm:grid-cols-[150px_minmax(0,1fr)_auto] sm:gap-4">
+              <div className="row-span-2 aspect-[4/5] overflow-hidden rounded-xl border sm:row-span-1 border-[var(--border)]">
+                <ProductImage src={item.image} alt={item.title} sizes="150px" />
               </div>
               <div>
-                <h2 className="serif text-3xl">{item.title}</h2>
+                <h2 className="product-name">{item.title}</h2>
                 <p className="mt-2 text-graphite">{formatCurrency(item.price)}</p>
                 <p className="mt-4 text-sm text-graphite">
                   {item.deliveryDate || copy.openDate} / {item.deliveryTimeSlot || copy.openSlot}
                 </p>
-                <button className="mt-4 text-xs uppercase tracking-[0.12em]" onClick={() => removeItem(item.id)}>{copy.remove}</button>
+                <button className="min-h-11 text-xs uppercase tracking-[0.08em] hover:underline" onClick={() => removeItem(item.id)}>{copy.remove}</button>
               </div>
-              <label className="grid h-fit gap-2 text-sm">
+              <label className="col-start-2 grid h-fit gap-2 text-sm sm:col-start-auto">
                 {copy.qty}
-                <input className="field-shell w-24 px-3 py-2" type="number" min="1" value={item.quantity} onChange={(event) => updateQuantity(item.id, Number(event.target.value))} />
+                <input className="field-shell min-h-11 w-24 px-3 py-2" type="number" min="1" value={item.quantity} onChange={(event) => updateQuantity(item.id, Number(event.target.value))} />
               </label>
             </article>
           ))}
         </div>
-        <aside className="surface-panel h-fit p-5">
+        <aside className="surface-panel h-fit rounded-[1.15rem] p-5">
           <div className="flex justify-between">
             <span>{copy.subtotal}</span>
             <strong>{formatCurrency(subtotal)}</strong>

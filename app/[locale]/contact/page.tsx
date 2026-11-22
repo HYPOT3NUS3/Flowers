@@ -49,14 +49,14 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   ];
 
   return (
-    <section className="container-shell grid gap-10 py-14 md:grid-cols-[0.85fr_1.15fr]">
+    <section className="container-shell grid items-start gap-7 py-9 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-10 md:py-14">
       <div>
         <p className="label text-toile">{copy.label}</p>
-        <h1 className="serif mt-4 text-6xl leading-none md:text-8xl">{copy.title}</h1>
-        <p className="mt-6 max-w-xl leading-8 text-graphite">{copy.intro}</p>
-        <div className="mt-8 grid gap-3">
+        <h1 className="page-title mt-4">{copy.title}</h1>
+        <p className="mt-4 max-w-xl leading-7 text-graphite">{copy.intro}</p>
+        <div className="mt-5 grid gap-2.5">
           {contactLinks.map((item) => (
-            <a key={item.href} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noreferrer" : undefined} className="surface-panel grid grid-cols-[auto_1fr] items-center gap-3 rounded-[1.2rem] p-4 transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]">
+            <a key={item.href} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noreferrer" : undefined} className="surface-panel grid grid-cols-[auto_1fr] items-center gap-3 rounded-xl p-3 transition-colors hover:border-ink/40">
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-powder text-ink">{item.icon}</span>
               <span>
                 <span className="label block text-toile">{item.label}</span>
@@ -64,7 +64,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               </span>
             </a>
           ))}
-          <div className="surface-panel grid grid-cols-[auto_1fr] items-center gap-3 rounded-[1.2rem] p-4">
+          <div className="surface-panel grid grid-cols-[auto_1fr] items-center gap-3 rounded-xl p-3">
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-powder text-ink"><MapPin size={19} aria-hidden="true" /></span>
             <span>
               <span className="label block text-toile">{copy.address}</span>
@@ -73,7 +73,9 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           </div>
         </div>
       </div>
-      <EnquiryForm locale={locale} />
+      <div className="min-w-0 border-t border-[var(--border)] pt-5 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+        <EnquiryForm locale={locale} />
+      </div>
     </section>
   );
 }

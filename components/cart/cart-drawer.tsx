@@ -33,30 +33,30 @@ export function CartDrawer({ locale }: { locale: Locale }) {
             <X />
           </button>
         </div>
-        <div className="flex-1 overflow-y-auto p-5">
+        <div data-lenis-prevent className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-4 sm:p-5">
           {items.length === 0 ? (
-            <p className="serif text-3xl">{copy.empty}</p>
+            <p className="section-title">{copy.empty}</p>
           ) : (
             <div className="grid gap-5">
               {items.map((item) => (
-                <div key={item.id} className="grid grid-cols-[92px_1fr] gap-4">
+                <div key={item.id} className="grid grid-cols-[clamp(64px,20vw,92px)_minmax(0,1fr)] gap-3 sm:gap-4">
                   <div className="aspect-[4/5] overflow-hidden border border-[var(--border)]">
-                    <ProductImage src={item.image} alt={item.title} />
+                    <ProductImage src={item.image} alt={item.title} sizes="92px" />
                   </div>
                   <div>
-                    <div className="flex justify-between gap-3">
-                      <p className="serif text-xl">{item.title}</p>
-                      <button className="text-xs uppercase tracking-[0.12em]" onClick={() => removeItem(item.id)}>{copy.remove}</button>
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+                      <p className="product-name">{item.title}</p>
+                      <button className="min-h-11 text-xs uppercase tracking-[0.08em] hover:underline" onClick={() => removeItem(item.id)}>{copy.remove}</button>
                     </div>
                     <p className="mt-1 text-sm text-graphite">{formatCurrency(item.price)}</p>
-                    <label className="mt-3 flex items-center gap-2 text-sm">
+                    <label className="mt-2 flex flex-wrap items-center gap-2 text-sm">
                       {copy.qty}
                       <input
                         type="number"
                         min="1"
                         value={item.quantity}
                         onChange={(event) => updateQuantity(item.id, Number(event.target.value))}
-                        className="field-shell w-16 px-2 py-1"
+                        className="field-shell min-h-11 w-16 px-2 py-1"
                       />
                     </label>
                   </div>
@@ -65,7 +65,7 @@ export function CartDrawer({ locale }: { locale: Locale }) {
             </div>
           )}
         </div>
-        <div className="border-t border-[var(--border)] p-5">
+        <div className="border-t border-[var(--border)] px-4 pt-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-5">
           <div className="mb-4 flex justify-between">
             <span>{copy.subtotal}</span>
             <strong>{formatCurrency(subtotal)}</strong>

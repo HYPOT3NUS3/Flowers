@@ -12,6 +12,8 @@ const care = {
   it: "Rimuovere l'imballo da trasporto, rinnovare il taglio e sistemare i fiori in acqua fresca e pulita, lontano dal sole diretto."
 };
 
+// Product photos are licensed Wikimedia Commons STAND-INS (credited in the footer).
+// Replace each with the boutique's own photograph of that arrangement before launch.
 export const products: Product[] = [
   {
     id: "p-001",
@@ -20,7 +22,7 @@ export const products: Product[] = [
     shortDescription: { ru: "Легкий авторский букет в бело-голубой гамме.", en: "A light signature bouquet in white and blue tones.", it: "Un bouquet d'autore leggero nei toni del bianco e dell'azzurro." },
     fullDescription: { ru: "Свежая композиция для утренней доставки, камерного поздравления или изящного жеста.", en: "A fresh arrangement for morning delivery, intimate congratulations or an elegant gesture.", it: "Una composizione fresca per una consegna mattutina, un augurio intimo o un gesto elegante." },
     exactPrice: 120,
-    images: ["/assets/products/generated/blue-white-bouquet.png"],
+    images: ["/assets/photos/photo-f151906303-960.jpg"],
     categories: ["signature", "seasonal"],
     flowerComposition: { ru: "Розы, эустома, сезонная зелень.", en: "Roses, lisianthus and seasonal greenery.", it: "Rose, lisianthus e verde di stagione." },
     sizeDescription: { ru: "Компактный букет, около 35 см.", en: "Compact bouquet, around 35 cm.", it: "Bouquet compatto, circa 35 cm." },
@@ -40,7 +42,7 @@ export const products: Product[] = [
     shortDescription: { ru: "Деликатная композиция с мягким силуэтом.", en: "A delicate arrangement with a soft silhouette.", it: "Una composizione delicata dalla silhouette morbida." },
     fullDescription: { ru: "Создана для спокойных, очень личных моментов и адресных поздравлений.", en: "Created for calm, deeply personal moments and thoughtful greetings.", it: "Creata per momenti quieti, personali e auguri pensati con cura." },
     exactPrice: 145,
-    images: ["/assets/products/generated/pink-ivory-arrangement.png"],
+    images: ["/assets/photos/photo-f61811544-960.jpg"],
     categories: ["signature", "gifts"],
     flowerComposition: { ru: "Камелии, ранункулюсы, нежная зелень.", en: "Camellias, ranunculus and soft greenery.", it: "Camelie, ranuncoli e verde leggero." },
     sizeDescription: { ru: "Компактная композиция, около 40 см.", en: "Compact arrangement, around 40 cm.", it: "Composizione compatta, circa 40 cm." },
@@ -51,7 +53,7 @@ export const products: Product[] = [
     madeToOrder: false,
     minimumLeadTimeHours: 24,
     seoTitle: { ru: "Шелковое озеро - букет", en: "Silk Lake bouquet", it: "Bouquet Lago di Seta" },
-    seoDescription: { ru: "Деликатная композиция Go Love.", en: "A delicate Go Love arrangement.", it: "Una composizione delicata Go Love." }
+    seoDescription: { ru: "Деликатная композиция Flowers Boutique.", en: "A delicate Flowers Boutique arrangement.", it: "Una composizione delicata Flowers Boutique." }
   },
   {
     id: "p-003",
@@ -60,7 +62,7 @@ export const products: Product[] = [
     shortDescription: { ru: "Утонченный белый букет для элегантного жеста.", en: "A refined white bouquet for an elegant gesture.", it: "Un raffinato bouquet bianco per un gesto elegante." },
     fullDescription: { ru: "Чистый, собранный образ с мягким объемом и воздушной графикой.", en: "A pure, composed design with gentle volume and airy line.", it: "Un disegno puro e composto, con volume lieve e linea ariosa." },
     exactPrice: 170,
-    images: ["/assets/products/generated/blue-white-bouquet.png"],
+    images: ["/assets/photos/photo-f112795716-960.jpg"],
     categories: ["signature", "roses"],
     flowerComposition: { ru: "Белые розы, камелии, сезонные акценты.", en: "White roses, camellias and seasonal accents.", it: "Rose bianche, camelie e accenti stagionali." },
     sizeDescription: { ru: "Средний букет, около 45 см.", en: "Medium bouquet, around 45 cm.", it: "Bouquet medio, circa 45 cm." },
@@ -80,7 +82,7 @@ export const products: Product[] = [
     shortDescription: { ru: "Легкая пастельная композиция среднего масштаба.", en: "A light pastel arrangement of medium scale.", it: "Una composizione pastello leggera di media dimensione." },
     fullDescription: { ru: "Композиция с прозрачным ритмом, созданная для частной виллы, отеля или ужина у озера.", en: "An arrangement with a transparent rhythm, created for a private villa, hotel or dinner by the lake.", it: "Una composizione dal ritmo trasparente, creata per villa privata, hotel o cena sul lago." },
     exactPrice: 190,
-    images: ["/assets/products/generated/blue-floral-box.png"],
+    images: ["/assets/photos/photo-f61814129-960.jpg"],
     categories: ["seasonal", "table"],
     flowerComposition: { ru: "Гортензия, розы, сезонная зелень.", en: "Hydrangea, roses and seasonal greenery.", it: "Ortensia, rose e verde di stagione." },
     sizeDescription: { ru: "Средняя композиция, около 50 см.", en: "Medium arrangement, around 50 cm.", it: "Composizione media, circa 50 cm." },
@@ -91,7 +93,7 @@ export const products: Product[] = [
     madeToOrder: true,
     minimumLeadTimeHours: 36,
     seoTitle: { ru: "Воздух Блевио", en: "Blevio Air", it: "Aria di Blevio" },
-    seoDescription: { ru: "Пастельная композиция Go Love.", en: "Pastel arrangement by Go Love.", it: "Composizione pastello Go Love." }
+    seoDescription: { ru: "Пастельная композиция Flowers Boutique.", en: "Pastel arrangement by Flowers Boutique.", it: "Composizione pastello Flowers Boutique." }
   },
   {
     id: "p-005",
@@ -100,7 +102,7 @@ export const products: Product[] = [
     shortDescription: { ru: "Щедрый букет с выразительным ботаническим характером.", en: "A generous bouquet with expressive botanical character.", it: "Un bouquet generoso dal carattere botanico espressivo." },
     fullDescription: { ru: "Большой букет для особого подарка, семейного торжества или приветствия гостей.", en: "A large bouquet for a special gift, family celebration or guest welcome.", it: "Un grande bouquet per un regalo importante, una festa di famiglia o un benvenuto agli ospiti." },
     exactPrice: 240,
-    images: ["/assets/products/generated/white-villa-arrangement.png"],
+    images: ["/assets/photos/photo-f25641607-500.jpg"],
     categories: ["signature", "seasonal"],
     flowerComposition: { ru: "Пионы, садовые розы, эвкалипт.", en: "Peonies, garden roses and eucalyptus.", it: "Peonie, rose da giardino ed eucalipto." },
     sizeDescription: { ru: "Большой букет, около 60 см.", en: "Large bouquet, around 60 cm.", it: "Grande bouquet, circa 60 cm." },
@@ -120,7 +122,7 @@ export const products: Product[] = [
     shortDescription: { ru: "Пышная садовая композиция с архитектурной линией.", en: "A lush garden arrangement with architectural line.", it: "Una composizione da giardino rigogliosa con linea architettonica." },
     fullDescription: { ru: "Объемный букет с праздничной пластикой и мягкой фактурой лепестков.", en: "A voluminous bouquet with celebratory movement and soft petal texture.", it: "Un bouquet voluminoso dal movimento festoso e dalla texture morbida." },
     exactPrice: 285,
-    images: ["/assets/products/generated/pink-ivory-arrangement.png"],
+    images: ["/assets/photos/photo-f2408336-500.jpg"],
     categories: ["roses", "gifts"],
     flowerComposition: { ru: "Садовые розы, дельфиниум, сезонные ветви.", en: "Garden roses, delphinium and seasonal branches.", it: "Rose da giardino, delphinium e rami stagionali." },
     sizeDescription: { ru: "Большой букет, около 65 см.", en: "Large bouquet, around 65 cm.", it: "Grande bouquet, circa 65 cm." },
@@ -140,7 +142,7 @@ export const products: Product[] = [
     shortDescription: { ru: "Графичная композиция в фарфорово-голубой гамме.", en: "A graphic arrangement in porcelain-blue tones.", it: "Una composizione grafica nei toni azzurro porcellana." },
     fullDescription: { ru: "Сдержанный, выразительный подарок для вечера, ужина или события у воды.", en: "A restrained, expressive gift for an evening, dinner or lakeside event.", it: "Un regalo misurato ed espressivo per una serata, una cena o un evento sull'acqua." },
     exactPrice: 330,
-    images: ["/assets/products/generated/blue-floral-box.png"],
+    images: ["/assets/photos/photo-f43387978-960.jpg"],
     categories: ["floral-boxes", "table"],
     flowerComposition: { ru: "Ирисы, белые розы, декоративная зелень.", en: "Irises, white roses and decorative greenery.", it: "Iris, rose bianche e verde decorativo." },
     sizeDescription: { ru: "Крупная композиция, около 70 см.", en: "Statement arrangement, around 70 cm.", it: "Composizione importante, circa 70 cm." },
@@ -151,7 +153,7 @@ export const products: Product[] = [
     madeToOrder: true,
     minimumLeadTimeHours: 48,
     seoTitle: { ru: "Голубой час", en: "Blue Hour arrangement", it: "Composizione Ora Blu" },
-    seoDescription: { ru: "Фарфорово-голубая композиция Go Love.", en: "Porcelain-blue arrangement by Go Love.", it: "Composizione azzurro porcellana Go Love." }
+    seoDescription: { ru: "Фарфорово-голубая композиция Flowers Boutique.", en: "Porcelain-blue arrangement by Flowers Boutique.", it: "Composizione azzurro porcellana Flowers Boutique." }
   },
   {
     id: "p-008",
@@ -160,7 +162,7 @@ export const products: Product[] = [
     shortDescription: { ru: "Статусный букет для виллы, отеля или торжества.", en: "A statement bouquet for a villa, hotel or celebration.", it: "Un bouquet d'impatto per villa, hotel o celebrazione." },
     fullDescription: { ru: "Собранный, масштабный образ с богатой сезонной фактурой.", en: "A composed, generous design with rich seasonal texture.", it: "Un disegno composto e generoso con ricca texture stagionale." },
     exactPrice: 420,
-    images: ["/assets/products/generated/white-villa-arrangement.png"],
+    images: ["/assets/photos/photo-f61711770-960.jpg"],
     categories: ["signature", "gifts"],
     flowerComposition: { ru: "Пионы, розы, орхидеи, ветви.", en: "Peonies, roses, orchids and branches.", it: "Peonie, rose, orchidee e rami." },
     sizeDescription: { ru: "Масштабный букет, около 80 см.", en: "Large-scale bouquet, around 80 cm.", it: "Bouquet di grande scala, circa 80 cm." },
@@ -180,7 +182,7 @@ export const products: Product[] = [
     shortDescription: { ru: "Настольная композиция для ужина и приема гостей.", en: "A table arrangement for dinner and guest reception.", it: "Una composizione da tavola per cena e accoglienza." },
     fullDescription: { ru: "Низкая композиция с мягкой линией, созданная для сервировки без визуального шума.", en: "A low arrangement with a soft line, created for tablescapes without visual noise.", it: "Una composizione bassa e morbida, pensata per la tavola senza rumore visivo." },
     exactPrice: 360,
-    images: ["/assets/products/generated/pink-ivory-arrangement.png"],
+    images: ["/assets/photos/photo-f79679375-960.jpg"],
     categories: ["table", "events"],
     flowerComposition: { ru: "Садовые розы, гортензия, зелень.", en: "Garden roses, hydrangea and greenery.", it: "Rose da giardino, ortensia e verde." },
     sizeDescription: { ru: "Низкая настольная композиция, 65 см.", en: "Low table arrangement, 65 cm.", it: "Composizione bassa da tavola, 65 cm." },
@@ -200,7 +202,7 @@ export const products: Product[] = [
     shortDescription: { ru: "Индивидуальная композиция высокого флористического искусства.", en: "A bespoke composition of high floral craft.", it: "Una composizione su misura di alta arte floreale." },
     fullDescription: { ru: "Персональная работа для VIP-подарка, частного ужина или оформления пространства.", en: "A personal commission for a VIP gift, private dinner or spatial floral statement.", it: "Una commissione personale per regalo VIP, cena privata o installazione floreale." },
     exactPrice: 560,
-    images: ["/assets/products/generated/white-villa-arrangement.png"],
+    images: ["/assets/photos/photo-m138226686-1200.webp"],
     categories: ["bespoke", "events"],
     flowerComposition: { ru: "Состав подбирается индивидуально после консультации.", en: "Composition is selected individually after consultation.", it: "La composizione viene definita individualmente dopo una consulenza." },
     sizeDescription: { ru: "Индивидуальный масштаб.", en: "Bespoke scale.", it: "Dimensione su misura." },
@@ -220,7 +222,7 @@ export const products: Product[] = [
     shortDescription: { ru: "Эффектная композиция для приветствия гостей.", en: "A striking arrangement for welcoming guests.", it: "Una composizione scenografica per accogliere gli ospiti." },
     fullDescription: { ru: "Создается под локацию, время доставки и характер события.", en: "Created around the location, delivery timing and character of the occasion.", it: "Creata intorno al luogo, all'orario di consegna e al carattere dell'occasione." },
     exactPrice: 680,
-    images: ["/assets/products/generated/white-villa-arrangement.png"],
+    images: ["/assets/photos/photo-f176253473-960.jpg"],
     categories: ["bespoke", "table"],
     flowerComposition: { ru: "Сезонный подбор с крупными садовыми цветами.", en: "Seasonal selection with large garden flowers.", it: "Selezione stagionale con grandi fiori da giardino." },
     sizeDescription: { ru: "VIP-композиция.", en: "VIP arrangement.", it: "Composizione VIP." },
@@ -240,7 +242,7 @@ export const products: Product[] = [
     shortDescription: { ru: "Флористический арт-объект по индивидуальному запросу.", en: "A floral art object by individual request.", it: "Un oggetto d'arte floreale su richiesta individuale." },
     fullDescription: { ru: "Подходит для предложений, фотосессий, мероприятий и адресных VIP-подарков.", en: "Suitable for proposals, photo sessions, events and highly personal VIP gifts.", it: "Adatto a proposte, shooting, eventi e regali VIP altamente personali." },
     exactPrice: 920,
-    images: ["/assets/products/generated/blue-floral-box.png"],
+    images: ["/assets/photos/photo-m138226685-1200.webp"],
     categories: ["bespoke", "events"],
     flowerComposition: { ru: "Флористический состав формируется после брифа.", en: "The floral composition is defined after a brief.", it: "La composizione floreale viene definita dopo il brief." },
     sizeDescription: { ru: "Индивидуальная инсталляция.", en: "Bespoke installation.", it: "Installazione su misura." },
@@ -251,7 +253,7 @@ export const products: Product[] = [
     madeToOrder: true,
     minimumLeadTimeHours: 96,
     seoTitle: { ru: "Индивидуальный проект у озера", en: "Lake Commission floral art", it: "Arte floreale Commissione del Lago" },
-    seoDescription: { ru: "Флористический арт-объект Go Love.", en: "A floral art object by Go Love.", it: "Un oggetto d'arte floreale Go Love." }
+    seoDescription: { ru: "Флористический арт-объект Flowers Boutique.", en: "A floral art object by Flowers Boutique.", it: "Un oggetto d'arte floreale Flowers Boutique." }
   }
 ];
 
