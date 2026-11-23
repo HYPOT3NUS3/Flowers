@@ -10,11 +10,9 @@ export default async function ShopPage({ params }: { params: Promise<{ locale: L
 
   return (
     <>
-      <section className="container-shell py-8 md:py-12">
-        <div>
-          <h1 className="page-title max-w-4xl">{t("title")}</h1>
-          <p className="mt-3 max-w-2xl text-base leading-7 md:text-lg text-graphite">{t("intro")}</p>
-        </div>
+      <section className="container-shell pt-10 md:pt-16">
+        <h1 data-enter className="page-title">{t("title")}</h1>
+        <p className="mt-4 max-w-xl text-base leading-7 text-graphite md:text-lg">{t("intro")}</p>
       </section>
       <BudgetFilter locale={locale} title={home("budgetTitle")} />
       <ShopCatalogue locale={locale} />

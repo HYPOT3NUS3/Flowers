@@ -6,8 +6,8 @@ import { BrandLogo } from "@/components/layout/brand-logo";
 
 export function Footer({ locale }: { locale: Locale }) {
   return (
-    <footer className="border-t border-[var(--border)] bg-porcelain">
-      <div className="container-shell grid grid-cols-2 gap-x-4 gap-y-6 pb-24 pt-7 sm:gap-x-8 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:py-14">
+    <footer className="site-footer">
+      <div className="container-shell grid grid-cols-2 gap-x-4 gap-y-6 pb-28 pt-14 sm:gap-x-8 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:pb-16 lg:pt-20">
         <div className="col-span-2 lg:col-span-1">
           <div className="brand-mark text-left">
             <BrandLogo className="brand-logo-footer" />
@@ -61,7 +61,7 @@ export function Footer({ locale }: { locale: Locale }) {
         </div>
         <p className="col-span-2 border-t border-[var(--border)] pt-4 text-xs leading-5 text-graphite lg:col-span-4">
           {/* Stand-in photographs from Wikimedia Commons: remove each credit when its photo is replaced. */}
-          Photos: Jez Timms (CC0), Daniel Case (CC BY-SA 3.0), Susanne Nilsson (CC BY-SA 2.0), Alexandra Seinet (CC0), Ruth Hartnup (CC BY 2.0), Rodion Kutsaev (CC0), Kor!An (CC BY-SA 3.0), Jina Lee (CC BY-SA 3.0), Downtowngal (CC BY-SA 4.0), Alvin Mahmudov (CC0), George E. Koronaios (CC BY-SA 4.0), Megala Shankar (CC BY-SA 4.0), direct2Florist (CC BY 2.0), via{" "}
+          Some product photos: Rodion Kutsaev (CC0), Jina Lee (CC BY-SA 3.0), Downtowngal (CC BY-SA 4.0), Alvin Mahmudov (CC0), George E. Koronaios (CC BY-SA 4.0), Megala Shankar (CC BY-SA 4.0), direct2Florist (CC BY 2.0), via{" "}
           <a href="https://commons.wikimedia.org" className="underline underline-offset-2">Wikimedia Commons</a>.
         </p>
       </div>

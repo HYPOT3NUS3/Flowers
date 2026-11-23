@@ -9,6 +9,7 @@ import { CartDrawer } from "@/components/cart/cart-drawer";
 import { CookieConsent } from "@/components/layout/cookie-consent";
 import { FloatingWhatsApp } from "@/components/layout/floating-whatsapp";
 import { SmoothScroll } from "@/components/motion/smooth-scroll";
+import { ScrollReveals } from "@/components/motion/scroll-reveals";
 import { isLocale, Locale, locales } from "@/lib/localization/config";
 import { siteSettings } from "@/content/site";
 
@@ -72,6 +73,7 @@ export default async function LocaleLayout({
           <CookieConsent locale={locale} />
           <FloatingWhatsApp locale={locale} />
           <SmoothScroll />
+          <ScrollReveals />
         </NextIntlClientProvider>
       </body>
     </html>

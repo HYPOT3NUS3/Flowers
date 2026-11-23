@@ -9,12 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ivory: "#FAF8F3",
-        porcelain: "#FFFDF9",
-        ink: "#161616",
-        graphite: "#5E5E5E",
-        powder: "#DDE7ED",
-        toile: "#718DA5",
+        ivory: "#F7F4EC",
+        porcelain: "#FDFBF6",
+        ink: "#1C2433",
+        graphite: "#545B66",
+        powder: "#E1E8F0",
+        toile: "#2F4F86",
         botanical: "#B6C0BC"
       },
       fontFamily: {

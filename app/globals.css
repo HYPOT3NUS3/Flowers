@@ -3,12 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --ivory: #faf8f3;
-  --porcelain: #fffdf9;
-  --ink: #161616;
-  --graphite: #5e5e5e;
-  --powder: #dde7ed;
-  --toile: #718da5;
+  /* Toile de Como: warm paper, navy ink, porcelain blue (from the toile and porcelain moodboard). */
+  --ivory: #f7f4ec;
+  --porcelain: #fdfbf6;
+  --ink: #1c2433;
+  --graphite: #545b66;
+  --powder: #e1e8f0;
+  --toile: #2f4f86;
+  --toile-deep: #1f3560;
   --aqua: #c7e5ec;
   --aqua-deep: #7fa8bb;
   --botanical: #b6c0bc;
@@ -16,8 +18,8 @@
   --sage: #d8ddd5;
   --shadow-soft: 0 24px 70px rgba(22, 22, 22, 0.10);
   --shadow-lift: 0 30px 90px rgba(22, 22, 22, 0.16);
-  --border: rgba(22, 22, 22, 0.16);
-  --font-editorial: "Lora", Georgia, serif;
+  --border: rgba(28, 36, 51, 0.14);
+  --font-editorial: "Cormorant Garamond", "Lora", Georgia, serif;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
   --font-manrope: "Manrope", system-ui, sans-serif;
@@ -97,32 +99,37 @@ svg {
 .editorial-note,
 .editorial-title {
   font-family: var(--font-editorial);
-  font-weight: 400;
-  letter-spacing: -0.015em;
+  font-weight: 500;
+  letter-spacing: -0.012em;
   overflow-wrap: anywhere;
   text-wrap: balance;
+  color: var(--ink);
 }
 
-.editorial-title,
-.editorial-italic,
-.editorial-note {
+/* Roman by default, like engraved toile captions; italic is an accent inside a heading (<em>). */
+.page-title em,
+.section-title em,
+.editorial-title em,
+.editorial-note em {
   font-style: italic;
+  font-weight: 400;
+  color: var(--toile);
 }
 
 .page-title {
-  font-size: clamp(2rem, 1.4rem + 2.8vw, 4rem);
-  line-height: 1.12;
+  font-size: clamp(2.6rem, 1.8rem + 3.4vw, 5.2rem);
+  line-height: 1.02;
 }
 
 .section-title {
-  font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.85rem);
-  line-height: 1.18;
+  font-size: clamp(2.1rem, 1.5rem + 2.6vw, 3.9rem);
+  line-height: 1.05;
 }
 
 .item-title,
 .editorial-note {
-  font-size: clamp(1.25rem, 1.05rem + 0.9vw, 1.9rem);
-  line-height: 1.3;
+  font-size: clamp(1.5rem, 1.2rem + 1.1vw, 2.2rem);
+  line-height: 1.2;
 }
 
 .product-name,
@@ -138,7 +145,20 @@ svg {
 }
 
 .checkout-heading {
-  font-size: 1.25rem;
+  font-family: var(--font-editorial);
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+/* Checkout blocks: separated by a rule, not boxed, so fields line up with the page title. */
+.checkout-block {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+.checkout-block + .checkout-block {
+  margin-top: 0.5rem;
 }
 
 .label.text-toile {
@@ -214,9 +234,9 @@ svg {
 
 /* Primary: the one action per screen. Solid ink so it never competes with the secondary. */
 .button-primary {
-  background-color: var(--ink);
+  background-color: var(--toile-deep);
   color: var(--porcelain);
-  border-color: var(--ink);
+  border-color: var(--toile-deep);
 }
 
 /* Secondary: quiet outline on the page ground. */
@@ -228,8 +248,8 @@ svg {
 
 @media (hover: hover) and (pointer: fine) {
   .button-primary:hover {
-    background-color: #2c3a44;
-    border-color: #2c3a44;
+    background-color: var(--toile);
+    border-color: var(--toile);
   }
 
   .button-secondary:hover {
@@ -305,12 +325,13 @@ svg {
 }
 
 .section-pad {
-  padding-block: clamp(2.6rem, 5.5vw, 6rem);
+  padding-block: clamp(4rem, 8vw, 8.5rem);
 }
 
 .editorial-title {
-  font-size: clamp(2.15rem, 1.3rem + 3.75vw, 4.75rem);
-  line-height: 1.08;
+  font-size: clamp(3rem, 1.9rem + 5.4vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
 }
 
 .botanical-paper {
@@ -685,10 +706,10 @@ a.lift-card:active,
 
 @keyframes hero-reveal {
   from {
-    clip-path: inset(10% 6% 10% 6% round 0.75rem);
+    clip-path: inset(0 0 14% 0);
   }
   to {
-    clip-path: inset(0 0 0 0 round 0.75rem);
+    clip-path: inset(0 0 0 0);
   }
 }
 
@@ -715,5 +736,405 @@ a.lift-card:active,
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Toile de Como home ---------- */
+
+/* Hero copy lines up with the page container on the left. */
+.home-hero .hero-title {
+  color: inherit;
+}
+
+@media (min-width: 768px) {
+  .home-hero .hero-copy {
+    padding-left: max(clamp(1rem, 2.5vw, 2.5rem), calc((100vw - 1480px) / 2));
+  }
+}
+
+/* On phones the hero copy sits on the photo, so the secondary button turns light. */
+@media (max-width: 767px) {
+  .hero-secondary {
+    color: var(--porcelain);
+    border-color: rgba(253, 251, 246, 0.7);
+    background-color: rgba(253, 251, 246, 0.08);
+    backdrop-filter: blur(6px);
+  }
+}
+
+/* Text links: the underline draws in from the left on hover. */
+.text-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--toile-deep);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 calc(50% + 0.85em);
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  transition: background-size 320ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .text-link:hover {
+    background-size: 0% 1px;
+    animation: underline-draw 420ms var(--ease-out) 120ms forwards;
+  }
+
+  .group:hover .tile-arrow {
+    transform: translate(2px, -2px);
+  }
+}
+
+@keyframes underline-draw {
+  from {
+    background-size: 0% 1px;
+  }
+  to {
+    background-size: 100% 1px;
+  }
+}
+
+.tile-arrow {
+  transition: transform 260ms var(--ease-out);
+}
+
+/* Phone order bar: slides up once the hero is gone; sits left of the WhatsApp button. */
+.mobile-order-bar {
+  position: fixed;
+  left: max(1rem, env(safe-area-inset-left));
+  right: calc(max(1rem, env(safe-area-inset-right)) + 44px + 0.75rem);
+  bottom: max(1.1rem, env(safe-area-inset-bottom));
+  z-index: 44;
+  transform: translateY(calc(100% + 1.5rem));
+  transition: transform 320ms var(--ease-out);
+}
+
+.mobile-order-bar[data-visible="true"] {
+  transform: translateY(0);
+}
+
+.mobile-order-bar .button-primary {
+  min-height: 44px;
+  box-shadow: 0 10px 24px -8px rgba(28, 36, 51, 0.35);
+}
+
+/* ---------- Shop + product ---------- */
+
+.product-card-name {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.2rem, 1.05rem + 0.5vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+/* Filter chips: one row that scrolls sideways on phones, wraps on desktop. */
+.chip-row {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  margin-inline: calc(-1 * clamp(1rem, 2.5vw, 2.5rem));
+  padding-inline: clamp(1rem, 2.5vw, 2.5rem);
+}
+
+.chip-row::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .chip-row {
+    flex-wrap: wrap;
+    overflow: visible;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+}
+
+.chip {
+  flex: none;
+  min-height: 44px;
+  border: 1px solid rgba(28, 36, 51, 0.2);
+  border-radius: 999px;
+  padding: 0.55rem 1.05rem;
+  font-size: 0.875rem;
+  color: var(--ink);
+  background: transparent;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease,
+    transform 160ms var(--ease-out);
+}
+
+.chip:active {
+  transform: scale(0.97);
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--toile-deep);
+  border-color: var(--toile-deep);
+  color: var(--porcelain);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .chip:not([aria-pressed="true"]):hover {
+    border-color: var(--ink);
+  }
+}
+
+/* Product details: native <details>, plus/minus drawn in CSS. */
+.product-detail summary::-webkit-details-marker {
+  display: none;
+}
+
+.detail-icon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+
+.detail-icon::before,
+.detail-icon::after {
+  content: "";
+  position: absolute;
+  inset: 50% 0 auto;
+  height: 1.5px;
+  background: currentColor;
+  transition: transform 260ms var(--ease-out);
+}
+
+.detail-icon::after {
+  transform: rotate(90deg);
+}
+
+.product-detail[open] .detail-icon::after {
+  transform: rotate(0deg);
+}
+
+/* Phone buy bar on product pages: price + button, beside the WhatsApp button. */
+.product-buy-bar {
+  position: fixed;
+  left: max(1rem, env(safe-area-inset-left));
+  right: calc(max(1rem, env(safe-area-inset-right)) + 44px + 0.75rem);
+  bottom: max(1.1rem, env(safe-area-inset-bottom));
+  z-index: 44;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(253, 251, 246, 0.94);
+  backdrop-filter: blur(10px);
+  padding: 0.3rem 0.3rem 0.3rem 1.1rem;
+  box-shadow: 0 10px 28px -10px rgba(28, 36, 51, 0.35);
+  transform: translateY(calc(100% + 1.5rem));
+  transition: transform 320ms var(--ease-out);
+}
+
+.product-buy-bar[data-visible="true"] {
+  transform: translateY(0);
+}
+
+/* Hero headline: hidden until SplitText has split it (no flash of unsplit text).
+   Fallback: if scripts never run, it shows after 1.6s anyway. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-split {
+    visibility: hidden;
+    animation: hero-split-fallback 0s linear 1.6s forwards;
+  }
+}
+
+@keyframes hero-split-fallback {
+  to {
+    visibility: visible;
+  }
+}
+
+/* On the phone hero the accent sits on the photo, so it stays light. */
+/* Phone hero: the copy sits on the photo, so a deep scrim covers the lower 60% and the
+   type gets a soft shadow. Measured on the brightest photo (white hydrangeas). */
+.hero-scrim {
+  background: linear-gradient(
+    to top,
+    rgba(14, 20, 32, 0.94) 0%,
+    rgba(14, 20, 32, 0.82) 38%,
+    rgba(14, 20, 32, 0.5) 62%,
+    rgba(14, 20, 32, 0.08) 85%
+  );
+}
+
+@media (max-width: 767px) {
+  .home-hero .hero-copy {
+    text-shadow: 0 1px 18px rgba(8, 12, 20, 0.45);
+  }
+
+  .home-hero .hero-title em {
+    color: #dde7f7;
+  }
+
+  /* On the dark photo the primary turns light so it stays the first thing you see. */
+  .home-hero .button-primary {
+    background-color: var(--porcelain);
+    border-color: var(--porcelain);
+    color: var(--toile-deep);
+    text-shadow: none;
+  }
+
+  .home-hero .button-secondary {
+    text-shadow: none;
+  }
+}
+
+/* ---------- Footer: deep porcelain blue, like the end of a printed catalogue ---------- */
+.site-footer {
+  --border: rgba(253, 251, 246, 0.16);
+  background: var(--toile-deep);
+  color: var(--porcelain);
+}
+
+.site-footer .text-graphite {
+  color: rgba(253, 251, 246, 0.74);
+}
+
+.site-footer .text-ink {
+  color: var(--porcelain);
+}
+
+.site-footer .label {
+  color: #b9c9e3;
+}
+
+.site-footer .brand-logo {
+  filter: brightness(0) invert(1);
+}
+
+.site-footer .field-shell {
+  border-color: rgba(253, 251, 246, 0.28);
+  background: rgba(253, 251, 246, 0.06);
+}
+
+.site-footer .field-shell:focus-within {
+  border-color: #b9c9e3;
+  box-shadow: 0 0 0 4px rgba(185, 201, 227, 0.18);
+}
+
+.site-footer input {
+  color: var(--porcelain);
+}
+
+.site-footer input::placeholder {
+  color: rgba(253, 251, 246, 0.62);
+}
+
+.site-footer a:focus-visible,
+.site-footer button:focus-visible {
+  outline: 2px solid #b9c9e3;
+  outline-offset: 3px;
+}
+
+/* Cart drawer: slides in from the right on the iOS drawer curve; the page behind stops scrolling. */
+:root {
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+html.drawer-open {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cart-panel {
+    animation: cart-in 420ms var(--ease-drawer);
+  }
+
+  .cart-backdrop {
+    animation: fade-in 300ms ease;
+  }
+}
+
+@keyframes cart-in {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ---------- Moving band between hero and services ---------- */
+.marquee-band {
+  position: relative;
+  overflow: hidden;
+  border-block: 1px solid var(--border);
+  background: var(--porcelain);
+  padding-block: clamp(1.1rem, 2.4vw, 1.9rem);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-line {
+  display: flex;
+  flex: none;
+}
+
+.marquee-word {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.75rem);
+  padding-right: clamp(1.25rem, 3vw, 2.75rem);
+  font-family: var(--font-editorial);
+  font-size: clamp(2rem, 1.4rem + 3vw, 4.4rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+  white-space: nowrap;
+  color: var(--toile-deep);
+}
+
+.marquee-dot {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: var(--toile);
+  opacity: 0.55;
+}
+
+.marquee-toggle {
+  position: absolute;
+  right: clamp(0.5rem, 1.5vw, 1rem);
+  bottom: 0.35rem;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  color: var(--graphite);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .marquee-toggle:hover {
+    color: var(--ink);
+    background: rgba(28, 36, 51, 0.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-toggle {
+    display: none;
   }
 }

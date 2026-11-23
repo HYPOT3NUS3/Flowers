@@ -49,48 +49,52 @@ export function ShopCatalogue({ locale }: { locale: Locale }) {
       });
   }, [budget, category, locale, query, sort]);
 
+  const t = (ru: string, en: string, it: string) => (locale === "ru" ? ru : locale === "it" ? it : en);
+
   return (
-    <div className="shop-clean-zone py-10 md:py-14">
+    <div className="pb-16 md:pb-24">
       <div className="container-shell">
-        <div className="surface-panel grid grid-cols-2 gap-3 rounded-[1.15rem] p-4 md:grid-cols-[minmax(0,1fr)_auto_auto] md:items-end md:p-5">
-          <label className="col-span-2 grid min-w-0 gap-2 text-sm md:col-span-1">
-            <span className="label">{locale === "ru" ? "Поиск" : locale === "it" ? "Cerca" : "Search"}</span>
-            <span className="field-shell flex items-center px-3">
-              <Search size={17} className="shrink-0" aria-hidden="true" />
+        <div className="border-y border-[var(--border)] py-4">
+          <div className="chip-row" role="group" aria-label={t("Категория", "Category", "Categoria")}>
+            {categories.map((item) => (
+              <button key={item.id} className="chip" aria-pressed={category === item.id} onClick={() => setCategory(item.id)}>
+                {text(item.label, locale)}
+              </button>
+            ))}
+          </div>
+          <div className="mt-3 grid grid-cols-[minmax(0,1fr)_auto] gap-2.5">
+            <label className="field-shell flex min-w-0 items-center px-3">
+              <Search size={17} className="shrink-0 text-graphite" aria-hidden="true" />
+              <span className="sr-only">{t("Поиск", "Search", "Cerca")}</span>
               <input
+                type="search"
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
-                className="min-h-11 min-w-0 flex-1 bg-transparent px-3"
-                placeholder={locale === "ru" ? "Название, цветок, категория" : locale === "it" ? "Nome, fiore, categoria" : "Name, flower, category"}
+                className="min-h-11 min-w-0 flex-1 bg-transparent px-3 text-base md:text-sm"
+                placeholder={t("Название, цветок, категория", "Name, flower, category", "Nome, fiore, categoria")}
               />
-            </span>
-          </label>
-          <label className="grid min-w-0 gap-2 text-sm">
-            <span className="label">{locale === "ru" ? "Категория" : locale === "it" ? "Categoria" : "Category"}</span>
-            <select className="field-shell min-h-11 w-full min-w-0 px-2 md:px-3" value={category} onChange={(event) => setCategory(event.target.value)}>
-              {categories.map((item) => <option key={item.id} value={item.id}>{text(item.label, locale)}</option>)}
-            </select>
-          </label>
-          <label className="grid min-w-0 gap-2 text-sm">
-            <span className="label">{locale === "ru" ? "Сортировка" : locale === "it" ? "Ordina" : "Sort"}</span>
-            <select className="field-shell min-h-11 w-full min-w-0 px-2 md:px-3" value={sort} onChange={(event) => setSort(event.target.value)}>
-              <option value="featured">{locale === "ru" ? "Рекомендуемые" : locale === "it" ? "Consigliati" : "Featured"}</option>
-              <option value="price-asc">€ ↑</option>
-              <option value="price-desc">€ ↓</option>
-            </select>
-          </label>
+            </label>
+            <label className="field-shell flex items-center">
+              <span className="sr-only">{t("Сортировка", "Sort", "Ordina")}</span>
+              <select className="min-h-11 bg-transparent pl-3 pr-2 text-base md:text-sm" value={sort} onChange={(event) => setSort(event.target.value)}>
+                <option value="featured">{t("Рекомендуемые", "Featured", "Consigliati")}</option>
+                <option value="price-asc">{t("Цена ↑", "Price ↑", "Prezzo ↑")}</option>
+                <option value="price-desc">{t("Цена ↓", "Price ↓", "Prezzo ↓")}</option>
+              </select>
+            </label>
+          </div>
         </div>
-        <div className="mt-8 flex items-center justify-between">
-          <p className="label" role="status">{filtered.length} {locale === "ru" ? "товаров" : locale === "it" ? "prodotti" : "products"}</p>
-        </div>
+        <p className="mt-6 text-sm text-graphite" role="status">
+          {filtered.length} {t("товаров", "arrangements", "composizioni")}
+        </p>
         {filtered.length ? (
-          <div className="product-grid mt-5">
+          <div data-reveal="stagger" className="product-grid mt-4">
             {filtered.map((product) => <ProductCard key={product.id} product={product} locale={locale} />)}
           </div>
         ) : (
-          <div className="surface-panel mt-12 p-10 text-center">
-            <p className="section-title">{locale === "ru" ? "Ничего не найдено." : locale === "it" ? "Nessun risultato." : "No results."}</p>
-            <p className="mt-3 text-graphite">{locale === "ru" ? "Попробуйте другой бюджет или запрос." : locale === "it" ? "Prova un altro budget o una nuova ricerca." : "Try another budget or search term."}</p>
+          <div className="mt-12 border-y border-[var(--border)] py-14 text-center">
+            <p className="section-title">{t("Ничего не найдено.", "No results.", "Nessun risultato.")}</p>
+            <p className="mt-3 text-graphite">{t("Попробуйте другой бюджет или запрос.", "Try another budget or search term.", "Prova un altro budget o una nuova ricerca.")}</p>
           </div>
         )}
       </div>

@@ -57,7 +57,11 @@ export const useCart = create<CartState>()(
       openDrawer: () => set({ drawerOpen: true }),
       closeDrawer: () => set({ drawerOpen: false })
     }),
-    { name: "flowers-boutique-cart" }
+    {
+      name: "flowers-boutique-cart",
+      // Only the items are remembered. The drawer must never reopen by itself on the next page.
+      partialize: (state) => ({ items: state.items })
+    }
   )
 );
 

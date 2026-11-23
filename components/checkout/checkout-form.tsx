@@ -157,19 +157,19 @@ export function CheckoutForm({ locale }: { locale: Locale }) {
   return (
     <form onSubmit={handleManualSubmit} className="grid gap-10 lg:grid-cols-[1fr_360px]">
       <div className="grid gap-8">
-        <section className="surface-panel grid gap-4 p-5 md:grid-cols-2">
+        <section className="checkout-block grid gap-4 md:grid-cols-2">
           <h2 className={`${sectionTitle} md:col-span-2`}>{copy.customer}</h2>
           <Input label={copy.name} error={errorFor("customerName")} className={field} props={register("customerName")} />
           <Input label={copy.email} error={errorFor("customerEmail")} className={field} props={register("customerEmail")} />
           <Input label={copy.phone} error={errorFor("customerPhone")} className={field} props={register("customerPhone")} />
         </section>
-        <section className="surface-panel grid gap-4 p-5 md:grid-cols-2">
+        <section className="checkout-block grid gap-4 md:grid-cols-2">
           <h2 className={`${sectionTitle} md:col-span-2`}>{copy.recipient}</h2>
           <Input label={copy.recipientName} error={errorFor("recipientName")} className={field} props={register("recipientName")} />
           <Input label={copy.recipientPhone} error={errorFor("recipientPhone")} className={field} props={register("recipientPhone")} />
           <Checkbox label={copy.anonymousDelivery} props={register("anonymousDelivery")} />
         </section>
-        <section className="surface-panel grid gap-4 p-5 md:grid-cols-2">
+        <section className="checkout-block grid gap-4 md:grid-cols-2">
           <h2 className={`${sectionTitle} md:col-span-2`}>{copy.delivery}</h2>
           <Input label={copy.street} error={errorFor("street")} className={field} props={register("street")} />
           <Input label={copy.apartment} error={errorFor("apartment")} className={field} props={register("apartment")} />
@@ -196,7 +196,7 @@ export function CheckoutForm({ locale }: { locale: Locale }) {
             </p>
           ) : null}
         </section>
-        <section className="surface-panel grid gap-4 p-5">
+        <section className="checkout-block grid gap-4">
           <h2 className={sectionTitle}>{copy.gift}</h2>
           <textarea className={`${field} min-h-28`} placeholder={copy.card} {...register("cardMessage")} />
           <Checkbox label={copy.blankCard} props={register("blankCard")} />
@@ -209,7 +209,7 @@ export function CheckoutForm({ locale }: { locale: Locale }) {
           <Checkbox label={copy.seasonal} props={register("seasonalDisclaimer")} error={errorFor("seasonalDisclaimer")} />
         </section>
       </div>
-      <aside className="surface-panel h-fit p-5">
+      <aside className="h-fit rounded-[0.6rem] bg-porcelain p-5 md:sticky md:top-28 md:p-7">
         <h2 className="checkout-heading">{copy.order}</h2>
         <div className="mt-5 grid gap-3 text-sm">
           {items.map((item) => (

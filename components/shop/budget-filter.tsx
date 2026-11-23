@@ -5,51 +5,40 @@ import { budgetBands, BudgetBand } from "@/content/products/types";
 import { Locale } from "@/lib/localization/config";
 import { text } from "@/lib/localization/strings";
 
+/** Price chips: one tap filters the catalogue by budget. The active chip's description shows below. */
 export function BudgetFilter({ locale, title }: { locale: Locale; title: string }) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const active = searchParams.get("budget") as BudgetBand | null;
+  const activeBand = budgetBands.find((band) => band.id === active);
+  const allLabel = locale === "ru" ? "Все" : locale === "it" ? "Tutto" : "All";
+  const inShop = pathname.endsWith("/shop");
 
   function selectBudget(id?: BudgetBand) {
     const params = new URLSearchParams(searchParams.toString());
-    if (id) {
-      params.set("budget", id);
-    } else {
-      params.delete("budget");
-    }
-    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+    if (id) params.set("budget", id);
+    else params.delete("budget");
+    const query = params.toString();
+    // On the home page a budget opens the shop; in the shop it filters in place.
+    const target = inShop ? pathname : `/${locale}/shop`;
+    router.push(`${target}${query ? `?${query}` : ""}`, { scroll: !inShop });
   }
 
   return (
-    <section className="shop-clean-zone py-6 md:py-9">
-      <div className="container-shell">
-        <div className="flex items-center justify-between gap-3">
-          <h2 className="item-title max-w-2xl">{title}</h2>
-          <button
-            className="button-secondary shrink-0"
-            aria-pressed={!active}
-            onClick={() => selectBudget()}
-          >
-            {locale === "ru" ? "Все" : locale === "it" ? "Tutto" : "All"}
+    <section className="container-shell pb-3 pt-8 md:pb-4 md:pt-10">
+      <h2 className="font-serif text-[1.6rem] font-medium leading-tight md:text-[2rem]">{title}</h2>
+      <div className="chip-row mt-4" role="group" aria-label={title}>
+        <button className="chip" aria-pressed={!active} onClick={() => selectBudget()}>{allLabel}</button>
+        {budgetBands.map((band) => (
+          <button key={band.id} className="chip tabular-nums" aria-pressed={active === band.id} onClick={() => selectBudget(band.id)}>
+            {band.label}
           </button>
-        </div>
-        <div className="mt-4 grid grid-cols-2 gap-2.5 text-left sm:grid-cols-3 lg:mt-5 lg:grid-cols-5">
-          {budgetBands.map((band) => (
-            <button
-              key={band.id}
-              className={`min-w-0 rounded-xl p-3 text-left transition-colors last:col-span-2 hover:border-ink/50 sm:last:col-span-1 md:p-4 ${
-                active === band.id ? "border border-ink bg-ink text-porcelain" : "surface-panel"
-              }`}
-              aria-pressed={active === band.id}
-              onClick={() => selectBudget(band.id)}
-            >
-              <span className="label block">{band.label}</span>
-              <span className="mt-1.5 block text-[0.82rem] leading-5 md:text-sm">{text(band.description, locale)}</span>
-            </button>
-          ))}
-        </div>
+        ))}
       </div>
+      <p className="mt-3 min-h-6 text-sm text-graphite" aria-live="polite">
+        {activeBand ? text(activeBand.description, locale) : null}
+      </p>
     </section>
   );
 }

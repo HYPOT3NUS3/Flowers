@@ -30,12 +30,6 @@ export default async function ProductPage({ params }: { params: Promise<{ locale
   if (!product) notFound();
   const title = text(product.title, locale);
   const related = products.filter((item) => item.slug !== product.slug && item.categories.some((category) => product.categories.includes(category))).slice(0, 4);
-  const detailHeadings = {
-    composition: locale === "ru" ? "Состав" : locale === "it" ? "Composizione" : "Composition",
-    scale: locale === "ru" ? "Размер" : locale === "it" ? "Dimensione" : "Scale",
-    care: locale === "ru" ? "Уход" : locale === "it" ? "Cura" : "Care",
-    seasonal: locale === "ru" ? "Сезонность" : locale === "it" ? "Stagionalità" : "Seasonal note"
-  };
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -54,33 +48,22 @@ export default async function ProductPage({ params }: { params: Promise<{ locale
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <section className="container-shell grid items-start gap-5 py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-10 md:py-12">
-        <div className="grid gap-4">
-          {product.images.map((image) => (
-            <div key={image} className="aspect-[4/5] max-h-[68svh] w-full self-start overflow-hidden rounded-xl border border-[var(--border)] bg-porcelain md:max-h-[calc(100svh-10rem)]">
-              <ProductImage src={image} alt={title} loading="eager" sizes="(max-width: 767px) 94vw, 49vw" className="block h-full w-full object-cover" />
+      <section className="pb-6 md:mx-auto md:grid md:w-[min(1480px,calc(100%-clamp(2rem,5vw,5rem)))] md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] md:items-start md:gap-14 md:py-12 lg:gap-20">
+        <div className="grid gap-4 md:sticky md:top-28">
+          {product.images.map((image, index) => (
+            <div key={image} data-enter className="photo-frame relative aspect-[4/5] max-h-[78svh] w-full overflow-hidden bg-powder md:max-h-[calc(100svh-9rem)] md:rounded-[0.6rem]">
+              <ProductImage src={image} alt={title} loading={index === 0 ? "eager" : "lazy"} sizes="(max-width: 767px) 100vw, 56vw" className="block h-full w-full object-cover" />
             </div>
           ))}
         </div>
         <PurchasePanel product={product} locale={locale} />
       </section>
-      <section className="container-shell grid gap-8 border-y border-[var(--border)] py-12 md:grid-cols-4">
-        {[
-          [detailHeadings.composition, text(product.flowerComposition, locale)],
-          [detailHeadings.scale, text(product.sizeDescription, locale)],
-          [detailHeadings.care, text(product.careInstructions, locale)],
-          [detailHeadings.seasonal, text(product.seasonalDisclaimer, locale)]
-        ].map(([heading, body]) => (
-          <div key={heading}>
-            <p className="label text-toile">{heading}</p>
-            <p className="mt-4 text-sm leading-7 text-graphite">{body}</p>
-          </div>
-        ))}
-      </section>
-      <section className="container-shell section-pad">
-        <h2 className="section-title">{locale === "ru" ? "Похожие композиции" : locale === "it" ? "Composizioni correlate" : "Related arrangements"}</h2>
-        <div className="product-grid mt-10">
+      <section className="border-t border-[var(--border)] bg-porcelain">
+        <div className="container-shell section-pad">
+        <h2 data-reveal="lines" className="section-title">{locale === "ru" ? "Похожие композиции" : locale === "it" ? "Composizioni correlate" : "Related arrangements"}</h2>
+        <div data-reveal="stagger" className="product-grid mt-10">
           {related.map((item) => <ProductCard key={item.id} product={item} locale={locale} />)}
+        </div>
         </div>
       </section>
     </>
