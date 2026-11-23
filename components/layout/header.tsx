@@ -73,7 +73,7 @@ export function Header({ locale }: { locale: Locale }) {
                   </Link>
                 ))}
               </nav>
-              <Link href={`/${locale}/shop`} className="hidden min-h-11 min-w-11 items-center justify-center rounded-full transition hover:bg-ink hover:text-porcelain md:flex" aria-label={labels.search}>
+              <Link href={`/${locale}/shop?search=1`} className="hidden min-h-11 min-w-11 items-center justify-center rounded-full transition hover:bg-ink hover:text-porcelain md:flex" aria-label={labels.search}>
                 <Search size={18} />
               </Link>
               <div className="hidden items-center gap-1 rounded-full border border-[var(--border)] bg-porcelain/65 px-2 py-1 min-[1120px]:flex">

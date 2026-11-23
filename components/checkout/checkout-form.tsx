@@ -105,6 +105,12 @@ export function CheckoutForm({ locale }: { locale: Locale }) {
           Object.entries(flattened).map(([key, value]) => [key, value?.[0]])
         ) as Partial<Record<keyof CheckoutInput, string>>
       );
+      // Take the customer to the first field that needs attention (on phones the button is far below it).
+      requestAnimationFrame(() => {
+        const first = document.querySelector<HTMLElement>('form [aria-invalid="true"]');
+        first?.scrollIntoView({ block: "center", behavior: "smooth" });
+        first?.focus({ preventScroll: true });
+      });
       return;
     }
     setManualErrors({});
@@ -151,7 +157,14 @@ export function CheckoutForm({ locale }: { locale: Locale }) {
   const sectionTitle = "checkout-heading";
 
   if (!items.length) {
-    return <p className="section-title">{copy.empty}</p>;
+    return (
+      <div className="border-t border-[var(--border)] pt-8">
+        <p className="text-lg text-graphite">{copy.empty}</p>
+        <a href={`/${locale}/shop`} className="button-primary mt-6 w-full sm:w-auto">
+          {locale === "ru" ? "Смотреть коллекции" : locale === "it" ? "Scopri le collezioni" : "View collections"}
+        </a>
+      </div>
+    );
   }
 
   return (
@@ -227,6 +240,11 @@ export function CheckoutForm({ locale }: { locale: Locale }) {
         <button className="button-primary mt-6 w-full" disabled={status === "loading"}>{status === "loading" ? "..." : copy.send}</button>
         {status === "success" ? <p className="mt-4 text-sm text-graphite">{copy.success}</p> : null}
         {status === "error" ? <p className="mt-4 text-sm text-red-700">{copy.error}</p> : null}
+        {Object.keys(manualErrors).length > 0 ? (
+          <p role="alert" className="mt-4 text-sm text-red-700">
+            {locale === "ru" ? "Заполните отмеченные поля выше." : locale === "it" ? "Completa i campi evidenziati qui sopra." : "Please complete the highlighted fields above."}
+          </p>
+        ) : null}
       </aside>
     </form>
   );
@@ -236,7 +254,7 @@ function Input({ label, props, error, className, type = "text" }: { label: strin
   return (
     <label className="grid gap-2 text-sm">
       {label}
-      <input type={type} className={className} {...props} />
+      <input type={type} className={className} aria-invalid={error ? true : undefined} {...props} />
       {error ? <span className="text-xs text-red-700">{error}</span> : null}
     </label>
   );
@@ -245,7 +263,7 @@ function Input({ label, props, error, className, type = "text" }: { label: strin
 function Checkbox({ label, props, error }: { label: string; props: UseFormRegisterReturn; error?: string }) {
   return (
     <label className="flex items-start gap-3 text-sm">
-      <input type="checkbox" className="mt-1" {...props} />
+      <input type="checkbox" className="mt-1" aria-invalid={error ? true : undefined} {...props} />
       <span>{label}{error ? <span className="block text-xs text-red-700">{error}</span> : null}</span>
     </label>
   );

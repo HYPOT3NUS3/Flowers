@@ -12,7 +12,8 @@ import { useCart } from "@/components/cart/cart-store";
 
 export function PurchasePanel({ product, locale }: { product: Product; locale: Locale }) {
   const addItem = useCart((state) => state.addItem);
-  const [quantity, setQuantity] = useState(1);
+  const [quantityText, setQuantityText] = useState("1");
+  const quantity = Math.max(1, Math.floor(Number(quantityText)) || 1);
   const [deliveryDate, setDeliveryDate] = useState("");
   const [deliveryTimeSlot, setDeliveryTimeSlot] = useState("10:00-12:00");
   const [buyVisible, setBuyVisible] = useState(true);
@@ -72,7 +73,7 @@ export function PurchasePanel({ product, locale }: { product: Product; locale: L
       <p className="mt-5 max-w-[52ch] text-lg leading-8 text-graphite">{text(product.shortDescription, locale)}</p>
 
       <div className="mt-8 grid grid-cols-2 gap-3">
-        <label className="col-span-2 grid gap-1.5 text-sm sm:col-span-1">
+        <label className="col-span-2 grid gap-1.5 text-sm">
           {t("Дата доставки", "Delivery date", "Data di consegna")}
           <input className="field-shell min-h-11 w-full min-w-0 px-3 text-base" type="date" value={deliveryDate} onChange={(event) => setDeliveryDate(event.target.value)} />
         </label>
@@ -87,7 +88,7 @@ export function PurchasePanel({ product, locale }: { product: Product; locale: L
         </label>
         <label className="grid min-w-0 gap-1.5 text-sm">
           {t("Количество", "Quantity", "Quantità")}
-          <input className="field-shell min-h-11 w-full min-w-0 px-3 text-base" type="number" min="1" inputMode="numeric" value={quantity} onChange={(event) => setQuantity(Math.max(1, Number(event.target.value) || 1))} />
+          <input className="field-shell min-h-11 w-full min-w-0 px-3 text-base" type="number" min="1" inputMode="numeric" value={quantityText} onChange={(event) => setQuantityText(event.target.value)} onBlur={() => setQuantityText(String(quantity))} />
         </label>
       </div>
       <button ref={buyRef} className="button-primary mt-5 w-full" onClick={buy}>{buyLabel}</button>

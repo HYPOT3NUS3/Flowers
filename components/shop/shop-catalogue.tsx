@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
 import { ProductCard } from "./product-card";
@@ -23,6 +23,15 @@ export function ShopCatalogue({ locale }: { locale: Locale }) {
   const searchParams = useSearchParams();
   const budget = searchParams.get("budget") as BudgetBand | null;
   const [query, setQuery] = useState("");
+  const searchRef = useRef<HTMLInputElement>(null);
+  const wantsSearch = searchParams.get("search") === "1";
+
+  // The header's search icon opens the shop ready to type.
+  useEffect(() => {
+    if (!wantsSearch) return;
+    searchRef.current?.focus({ preventScroll: true });
+    searchRef.current?.scrollIntoView({ block: "center" });
+  }, [wantsSearch]);
   const [category, setCategory] = useState("all");
   const [sort, setSort] = useState("featured");
 
@@ -67,11 +76,12 @@ export function ShopCatalogue({ locale }: { locale: Locale }) {
               <Search size={17} className="shrink-0 text-graphite" aria-hidden="true" />
               <span className="sr-only">{t("Поиск", "Search", "Cerca")}</span>
               <input
+                ref={searchRef}
                 type="search"
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 className="min-h-11 min-w-0 flex-1 bg-transparent px-3 text-base md:text-sm"
-                placeholder={t("Название, цветок, категория", "Name, flower, category", "Nome, fiore, categoria")}
+                placeholder={t("Поиск букетов", "Search bouquets", "Cerca bouquet")}
               />
             </label>
             <label className="field-shell flex items-center">
@@ -88,7 +98,7 @@ export function ShopCatalogue({ locale }: { locale: Locale }) {
           {filtered.length} {t("товаров", "arrangements", "composizioni")}
         </p>
         {filtered.length ? (
-          <div data-reveal="stagger" className="product-grid mt-4">
+          <div className="product-grid mt-4">
             {filtered.map((product) => <ProductCard key={product.id} product={product} locale={locale} />)}
           </div>
         ) : (

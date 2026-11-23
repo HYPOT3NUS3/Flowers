@@ -363,16 +363,16 @@ svg {
   min-width: 54px;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(81, 119, 138, 0.62);
+  border: 1px solid rgba(28, 36, 51, 0.28);
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--aqua), #edf7f9);
-  color: var(--ink);
+  background: var(--porcelain);
+  color: var(--toile-deep);
   box-shadow: 0 4px 14px rgba(22, 22, 22, 0.1);
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
 .whatsapp-float:hover {
-  background: linear-gradient(135deg, #a9d3dd, #dceff3);
+  background: var(--powder);
   box-shadow: var(--shadow-lift);
   transform: translateY(-2px);
 }
@@ -551,9 +551,35 @@ a.lift-card:active,
 }
 
 .field-shell:focus-within {
-  border-color: rgba(113, 141, 165, 0.9);
+  border-color: var(--toile);
   background: var(--porcelain);
-  box-shadow: 0 0 0 4px rgba(113, 141, 165, 0.14);
+  box-shadow: 0 0 0 3px rgba(47, 79, 134, 0.22);
+}
+
+/* The rounded field shows focus (above), so the control inside must not draw the square
+   site-wide outline on top of it. Same for controls that are themselves a .field-shell. */
+.field-shell input:focus-visible,
+.field-shell select:focus-visible,
+.field-shell textarea:focus-visible,
+input.field-shell:focus-visible,
+select.field-shell:focus-visible,
+textarea.field-shell:focus-visible {
+  outline: none;
+}
+
+/* Invalid fields: a red edge the customer can spot while scrolling. */
+.field-shell[aria-invalid="true"],
+.field-shell:has([aria-invalid="true"]) {
+  border-color: #b42318;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
 .product-grid {
@@ -1018,8 +1044,8 @@ a.lift-card:active,
 }
 
 .site-footer .field-shell {
-  border-color: rgba(253, 251, 246, 0.28);
-  background: rgba(253, 251, 246, 0.06);
+  border-color: rgba(253, 251, 246, 0.35);
+  background: transparent;
 }
 
 .site-footer .field-shell:focus-within {
@@ -1032,7 +1058,7 @@ a.lift-card:active,
 }
 
 .site-footer input::placeholder {
-  color: rgba(253, 251, 246, 0.62);
+  color: rgba(253, 251, 246, 0.72);
 }
 
 .site-footer a:focus-visible,
